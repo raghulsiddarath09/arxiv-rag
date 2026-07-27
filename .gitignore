@@ -1,0 +1,12 @@
+__pycache__/
+.coverage
+.DS_Store
+.env
+.pytest_cache/
+*.log
+*.pyc
+faiss_index_best/
+faiss_index/
+frontend/build/
+frontend/node_modules/
+papers_cache.json

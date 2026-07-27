@@ -1,0 +1,26 @@
+[
+  {
+    "name": "all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "size_mb": 22,
+    "recall@3": 0.8888888888888888,
+    "embed_time_s": 1.7,
+    "query_latency_ms": 3.9
+  },
+  {
+    "name": "all-mpnet-base-v2",
+    "dimensions": 768,
+    "size_mb": 420,
+    "recall@3": 0.6666666666666666,
+    "embed_time_s": 10.3,
+    "query_latency_ms": 23.1
+  },
+  {
+    "name": "BGE-M3",
+    "dimensions": 1024,
+    "size_mb": 568,
+    "recall@3": 0.7777777777777778,
+    "embed_time_s": 37.2,
+    "query_latency_ms": 76.9
+  }
+]

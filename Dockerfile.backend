@@ -1,0 +1,53 @@
+# ── Stage 1: Base image ──────────────────────────────────
+# python:3.11-slim is a minimal Python image
+# We use 3.11 not 3.13 because it has better package compatibility
+# "slim" removes unnecessary OS tools → smaller image (~150MB vs ~900MB)
+FROM python:3.11-slim
+
+# ── Stage 2: System dependencies ─────────────────────────
+# These are OS-level packages needed before Python packages
+# build-essential: C compiler needed by some Python packages (numpy, faiss)
+# curl: needed for health checks
+# --no-install-recommends: skip optional packages → smaller image
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── Stage 3: Working directory ────────────────────────────
+# All subsequent commands run from /app inside the container
+WORKDIR /app
+
+# ── Stage 4: Install Python dependencies ─────────────────
+# Copy requirements FIRST (before copying code)
+# Why: Docker caches each step. If requirements.txt hasn't changed,
+# Docker skips this step on rebuilds even if your code changed.
+# This makes rebuilds 10x faster.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ── Stage 5: Copy application code ───────────────────────
+COPY main.py .
+COPY rag_pipeline.py .
+COPY papers_cache.json .
+
+# ── Stage 6: Copy FAISS index ────────────────────────────
+COPY faiss_index/ ./faiss_index/
+
+# ── Stage 7: Environment variables ───────────────────────
+# PORT that uvicorn listens on inside container
+ENV PORT=8000
+
+# ── Stage 8: Expose port ─────────────────────────────────
+# Documents which port the container uses (doesn't actually open it)
+EXPOSE 8000
+
+# ── Stage 9: Health check ─────────────────────────────────
+# Docker checks this every 30s to know if container is healthy
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# ── Stage 10: Start command ───────────────────────────────
+# host=0.0.0.0 means accept connections from outside the container
+# (not just localhost inside the container)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

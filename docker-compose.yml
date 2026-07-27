@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+
+  # ── Redis ────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    # Use official Redis image — no custom Dockerfile needed
+    # redis:7-alpine = Redis 7 on Alpine Linux (~30MB)
+    container_name: arxiv-redis
+    ports:
+      - "6379:6379"
+      # host_port:container_port
+      # Exposes Redis on your Mac's port 6379
+    volumes:
+      - redis_data:/data
+      # Persist Redis data across container restarts
+      # Without this, cache is lost when container stops
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ── FastAPI Backend ───────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: arxiv-backend
+    ports:
+      - "8000:8000"
+    environment:
+      # GROQ_API_KEY passed from your shell environment
+      # Run: export GROQ_API_KEY=your_key before docker-compose up
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_HOST=redis
+      # "redis" here is the service name above — Docker networking
+      # resolves service names to container IPs automatically
+      - REDIS_PORT=6379
+    depends_on:
+      redis:
+        condition: service_healthy
+      # Backend won't start until Redis passes its health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      # start_period: give 60s for models to load before checking
+      retries: 3
+    restart: unless-stopped
+    volumes:
+      - ./papers_cache.json:/app/papers_cache.json:ro
+      - ./faiss_index:/app/faiss_index:ro
+      # :ro = read-only mount
+      # Papers and index don't change at runtime
+
+  # ── React Frontend ────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+      args:
+        # Tell React where the backend is
+        # In production this would be your EC2 public IP or domain
+        REACT_APP_API_URL: http://localhost:8000
+    container_name: arxiv-frontend
+    ports:
+      - "80:80"
+      # Map host port 3000 to nginx's port 80 inside container
+      # So you still access at localhost:3000
+    depends_on:
+      backend:
+        condition: service_healthy
+      # Frontend won't start until backend is healthy
+    restart: unless-stopped
+
+# ── Named volumes ─────────────────────────────────────────
+volumes:
+  redis_data:
+    # Docker manages this volume
+    # Data persists even when containers are removed
