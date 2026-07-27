@@ -65,7 +65,7 @@ services:
       args:
         # Tell React where the backend is
         # In production this would be your EC2 public IP or domain
-        REACT_APP_API_URL: http://localhost:8000
+        REACT_APP_API_URL: http://35.153.168.93:8000
     container_name: arxiv-frontend
     ports:
       - "80:80"
