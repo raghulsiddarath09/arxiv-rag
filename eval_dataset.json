@@ -1,0 +1,316 @@
+{
+  "_meta": {
+    "corpus": "papers_cache.json (1100 papers)",
+    "note": "Every relevant_paper_id below was verified present in papers_cache.json via set membership before inclusion. Run verify_eval_ids() in evaluate.py to re-confirm after any corpus change.",
+    "id_format": "Bare arXiv ID (no URL prefix, no version suffix). evaluate.py normalizes both sides before comparison.",
+    "topics": ["dense_retrieval", "rag", "lora_peft", "federated_learning", "meta_learning", "contrastive_embeddings"]
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "topic": "dense_retrieval",
+      "question": "How do single versus multiple vector representations compare for retrieving passages?",
+      "relevant_paper_ids": ["2108.06279"],
+      "relevant_titles": ["On Single and Multiple Representations in Dense Passage Retrieval"]
+    },
+    {
+      "id": "q02",
+      "topic": "dense_retrieval",
+      "question": "What masking strategy during pre-training improves a language model for retrieval tasks?",
+      "relevant_paper_ids": ["2210.15133"],
+      "relevant_titles": ["Retrieval Oriented Masking Pre-training Language Model for Dense Passage Retrieval"]
+    },
+    {
+      "id": "q03",
+      "topic": "dense_retrieval",
+      "question": "Can generating questions without supervision improve which passages get ranked highest?",
+      "relevant_paper_ids": ["2204.07496"],
+      "relevant_titles": ["Improving Passage Retrieval with Zero-Shot Question Generation"]
+    },
+    {
+      "id": "q04",
+      "topic": "dense_retrieval",
+      "question": "How fragile are dual encoder retrieval systems when the input query contains typographical errors?",
+      "relevant_paper_ids": ["2205.02303", "2403.10939"],
+      "relevant_titles": [
+        "Analysing the Robustness of Dual Encoders for Dense Retrieval Against Misspellings",
+        "Improving the Robustness of Dense Retrievers Against Typos via Multi-Positive Contrastive Learning"
+      ]
+    },
+    {
+      "id": "q05",
+      "topic": "dense_retrieval",
+      "question": "Does supplying more than one correct passage per training example help retriever quality?",
+      "relevant_paper_ids": ["2508.09534"],
+      "relevant_titles": ["Improving Dense Passage Retrieval with Multiple Positive Passages"]
+    },
+    {
+      "id": "q06",
+      "topic": "dense_retrieval",
+      "question": "Is dense retrieval actually performing semantic matching, or something shallower?",
+      "relevant_paper_ids": ["2402.11035"],
+      "relevant_titles": ["Dense Passage Retrieval: Is it Retrieving?"]
+    },
+    {
+      "id": "q07",
+      "topic": "dense_retrieval",
+      "question": "How can natural language inference signals be used to tune a retriever?",
+      "relevant_paper_ids": ["2410.15801"],
+      "relevant_titles": ["Improve Dense Passage Retrieval with Entailment Tuning"]
+    },
+    {
+      "id": "q08",
+      "topic": "dense_retrieval",
+      "question": "What approach rewrites a user's follow-up question so it can be searched in a conversational setting?",
+      "relevant_paper_ids": ["2406.18960"],
+      "relevant_titles": ["A Surprisingly Simple yet Effective Multi-Query Rewriting Method for Conversational Search"]
+    },
+    {
+      "id": "q09",
+      "topic": "dense_retrieval",
+      "question": "Do retrieval findings from one document domain transfer to a different domain?",
+      "relevant_paper_ids": ["2301.05508"],
+      "relevant_titles": ["Do the Findings of Document and Passage Retrieval Generalize to the Retrieval of Responses?"]
+    },
+    {
+      "id": "q10",
+      "topic": "dense_retrieval",
+      "question": "How is passage search applied to finding groups of matching patients?",
+      "relevant_paper_ids": ["2507.01049"],
+      "relevant_titles": ["Cohort Retrieval using Dense Passage Retrieval"]
+    },
+    {
+      "id": "q11",
+      "topic": "rag",
+      "question": "What are the architectural components involved in building a production retrieval-augmented system?",
+      "relevant_paper_ids": ["2601.05264"],
+      "relevant_titles": ["Engineering the RAG Stack: A Comprehensive Review of the Architecture"]
+    },
+    {
+      "id": "q12",
+      "topic": "rag",
+      "question": "How can a retrieval-augmented pipeline iteratively refine its own answers for faithfulness?",
+      "relevant_paper_ids": ["2510.22344"],
+      "relevant_titles": ["FAIR-RAG: Faithful Adaptive Iterative Refinement for Retrieval-Augmented Generation"]
+    },
+    {
+      "id": "q13",
+      "topic": "rag",
+      "question": "What benchmark tests whether a system can chain evidence across several documents?",
+      "relevant_paper_ids": ["2401.15391"],
+      "relevant_titles": ["MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries"]
+    },
+    {
+      "id": "q14",
+      "topic": "rag",
+      "question": "Can an attacker determine whether a specific document sits in a retrieval system's knowledge base?",
+      "relevant_paper_ids": ["2502.00306"],
+      "relevant_titles": ["Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation"]
+    },
+    {
+      "id": "q15",
+      "topic": "rag",
+      "question": "How can language models automate the process of surveying existing research?",
+      "relevant_paper_ids": ["2411.18583"],
+      "relevant_titles": ["Automated Literature Review Using NLP Techniques and LLM-Based Retrieval"]
+    },
+    {
+      "id": "q16",
+      "topic": "lora_peft",
+      "question": "What modification to learning rates makes low-rank adaptation converge better?",
+      "relevant_paper_ids": ["2402.12354"],
+      "relevant_titles": ["LoRA+: Efficient Low Rank Adaptation of Large Models"]
+    },
+    {
+      "id": "q17",
+      "topic": "lora_peft",
+      "question": "How is low-rank adaptation aggregated when training is distributed across many clients?",
+      "relevant_paper_ids": ["2411.14961"],
+      "relevant_titles": ["LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement"]
+    },
+    {
+      "id": "q18",
+      "topic": "lora_peft",
+      "question": "What technique reduces the memory footprint of activations during low-rank fine-tuning?",
+      "relevant_paper_ids": ["2607.11940"],
+      "relevant_titles": ["CARE-LoRA: Compressed Activation REconstruction for Memory-Efficient LoRA"]
+    },
+    {
+      "id": "q19",
+      "topic": "lora_peft",
+      "question": "How can adapting weights within the null space avoid interfering with existing knowledge?",
+      "relevant_paper_ids": ["2512.15233"],
+      "relevant_titles": ["Null-LoRA: Low-Rank Adaptation on Null Space"]
+    },
+    {
+      "id": "q20",
+      "topic": "lora_peft",
+      "question": "Can several separately trained adapters be combined into a single one?",
+      "relevant_paper_ids": ["2606.03723"],
+      "relevant_titles": ["Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter"]
+    },
+    {
+      "id": "q21",
+      "topic": "lora_peft",
+      "question": "Are low-rank adapters being optimized correctly, and what are the theoretical limits?",
+      "relevant_paper_ids": ["2407.18242", "2406.03136"],
+      "relevant_titles": [
+        "LoRA-Pro: Are Low-Rank Adapters Properly Optimized?",
+        "Computational Limits of Low-Rank Adaptation (LoRA) Fine-Tuning"
+      ]
+    },
+    {
+      "id": "q22",
+      "topic": "lora_peft",
+      "question": "How can task-specific features be emphasized during parameter-efficient adaptation?",
+      "relevant_paper_ids": ["2412.09827"],
+      "relevant_titles": ["Low-Rank Adaptation with Task-Relevant Feature Enhancement for Fine-tuning"]
+    },
+    {
+      "id": "q23",
+      "topic": "lora_peft",
+      "question": "How is spectral alignment applied to transfer knowledge into a smaller model?",
+      "relevant_paper_ids": ["2607.04306"],
+      "relevant_titles": ["SAD-LoRA: Spectral Alignment for Low-Rank Knowledge Distillation"]
+    },
+    {
+      "id": "q24",
+      "topic": "federated_learning",
+      "question": "What aggregation method handles clients whose data distributions differ substantially?",
+      "relevant_paper_ids": ["2112.09429"],
+      "relevant_titles": ["Federated Learning with Superquantile Aggregation for Heterogeneous Data"]
+    },
+    {
+      "id": "q25",
+      "topic": "federated_learning",
+      "question": "What are the major unsolved research problems in distributed collaborative training?",
+      "relevant_paper_ids": ["1912.04977"],
+      "relevant_titles": ["Advances and Open Problems in Federated Learning"]
+    },
+    {
+      "id": "q26",
+      "topic": "federated_learning",
+      "question": "How does distillation reduce the communication cost of on-device training?",
+      "relevant_paper_ids": ["1811.11479"],
+      "relevant_titles": ["Communication-Efficient On-Device Machine Learning: Federated Distillation"]
+    },
+    {
+      "id": "q27",
+      "topic": "federated_learning",
+      "question": "What happens to a distributed model when some participants deliberately corrupt their labels?",
+      "relevant_paper_ids": ["2412.18507"],
+      "relevant_titles": ["An Empirical Analysis of Federated Learning Models Subject to Label-Flipping Attacks"]
+    },
+    {
+      "id": "q28",
+      "topic": "federated_learning",
+      "question": "How can privacy guarantees be varied per participant rather than applied uniformly?",
+      "relevant_paper_ids": ["2501.17634"],
+      "relevant_titles": ["Federated Learning With Individualized Privacy Through Client Sampling"]
+    },
+    {
+      "id": "q29",
+      "topic": "federated_learning",
+      "question": "How is differential privacy combined with collaborative training on medical records?",
+      "relevant_paper_ids": ["1911.05861"],
+      "relevant_titles": ["Federated and Differentially Private Learning for Electronic Health Records"]
+    },
+    {
+      "id": "q30",
+      "topic": "federated_learning",
+      "question": "Can sparse subnetworks be identified at initialization to make distributed training cheaper?",
+      "relevant_paper_ids": ["2405.09037"],
+      "relevant_titles": ["SSFL: Discovering Sparse Unified Subnetworks at Initialization for Efficient Federated Learning"]
+    },
+    {
+      "id": "q31",
+      "topic": "federated_learning",
+      "question": "How do game-theoretic incentives affect whether participants cooperate honestly?",
+      "relevant_paper_ids": ["2509.02391"],
+      "relevant_titles": ["Gaming and Cooperation in Federated Learning: What Can Happen and How to Monitor It"]
+    },
+    {
+      "id": "q32",
+      "topic": "meta_learning",
+      "question": "How can the inner and outer learning rates of MAML be adapted automatically?",
+      "relevant_paper_ids": ["1905.07435"],
+      "relevant_titles": ["Alpha MAML: Adaptive Model-Agnostic Meta-Learning"]
+    },
+    {
+      "id": "q33",
+      "topic": "meta_learning",
+      "question": "What is the overall landscape of methods for learning to learn in sequential decision problems?",
+      "relevant_paper_ids": ["2301.08028"],
+      "relevant_titles": ["A Tutorial on Meta-Reinforcement Learning"]
+    },
+    {
+      "id": "q34",
+      "topic": "meta_learning",
+      "question": "How does separating exploring from exploiting improve adaptation to new tasks?",
+      "relevant_paper_ids": ["2008.02790", "2010.01062"],
+      "relevant_titles": [
+        "Decoupling Exploration and Exploitation for Meta-Reinforcement Learning",
+        "Exploration in Approximate Hyper-State Space for Meta Reinforcement Learning"
+      ]
+    },
+    {
+      "id": "q35",
+      "topic": "meta_learning",
+      "question": "What PAC-Bayesian guarantees exist for learning across a distribution of tasks?",
+      "relevant_paper_ids": ["2002.05551", "2402.04054"],
+      "relevant_titles": [
+        "PACOH: Bayes-Optimal Meta-Learning with PAC-Guarantees",
+        "More Flexible PAC-Bayesian Meta-Learning by Learning Learning Algorithms"
+      ]
+    },
+    {
+      "id": "q36",
+      "topic": "meta_learning",
+      "question": "How can a model rapidly adjust to new context with very few gradient updates?",
+      "relevant_paper_ids": ["1810.03642"],
+      "relevant_titles": ["Fast Context Adaptation via Meta-Learning"]
+    },
+    {
+      "id": "q37",
+      "topic": "meta_learning",
+      "question": "How is in-context learning applied to protein sequence models?",
+      "relevant_paper_ids": ["2410.08355"],
+      "relevant_titles": ["Metalic: Meta-Learning In-Context with Protein Language Models"]
+    },
+    {
+      "id": "q38",
+      "topic": "contrastive_embeddings",
+      "question": "What properties of alignment and uniformity explain why contrastive objectives work?",
+      "relevant_paper_ids": ["2005.10242"],
+      "relevant_titles": ["Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere"]
+    },
+    {
+      "id": "q39",
+      "topic": "contrastive_embeddings",
+      "question": "How similar do learned vector representations become when trained with contrastive objectives?",
+      "relevant_paper_ids": ["2506.09781"],
+      "relevant_titles": ["On the Similarities of Embeddings in Contrastive Learning"]
+    },
+    {
+      "id": "q40",
+      "topic": "contrastive_embeddings",
+      "question": "How can hierarchical relationships be encoded in non-Euclidean vector space?",
+      "relevant_paper_ids": ["1804.01882"],
+      "relevant_titles": ["Hyperbolic Entailment Cones for Learning Hierarchical Embeddings"]
+    },
+    {
+      "id": "q41",
+      "topic": "contrastive_embeddings",
+      "question": "What method speeds up graph representation learning by reducing graph size first?",
+      "relevant_paper_ids": ["2007.02817"],
+      "relevant_titles": ["Faster Graph Embeddings via Coarsening"]
+    },
+    {
+      "id": "q42",
+      "topic": "contrastive_embeddings",
+      "question": "How does self-supervised pretraining perform on sensor timeseries for clinical prediction?",
+      "relevant_paper_ids": ["2111.07089"],
+      "relevant_titles": ["Evaluating Contrastive Learning on Wearable Timeseries for Downstream Clinical Outcomes"]
+    }
+  ]
+}

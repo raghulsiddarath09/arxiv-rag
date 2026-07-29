@@ -1,0 +1,1154 @@
+{
+  "corpus_size": 1100,
+  "n_questions": 42,
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "overall": {
+    "recall@3": 0.8214285714285714,
+    "precision@3": 0.3015873015873016,
+    "recall@5": 0.9047619047619048,
+    "precision@5": 0.20000000000000004,
+    "recall@10": 0.9523809523809523,
+    "precision@10": 0.10476190476190476
+  },
+  "by_topic": {
+    "dense_retrieval": {
+      "recall@3": 0.85,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "n": 10
+    },
+    "rag": {
+      "recall@3": 0.8,
+      "recall@5": 0.8,
+      "recall@10": 1.0,
+      "n": 5
+    },
+    "lora_peft": {
+      "recall@3": 0.875,
+      "recall@5": 0.875,
+      "recall@10": 0.875,
+      "n": 8
+    },
+    "federated_learning": {
+      "recall@3": 0.75,
+      "recall@5": 0.875,
+      "recall@10": 1.0,
+      "n": 8
+    },
+    "meta_learning": {
+      "recall@3": 0.6666666666666666,
+      "recall@5": 0.8333333333333334,
+      "recall@10": 0.8333333333333334,
+      "n": 6
+    },
+    "contrastive_embeddings": {
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "n": 5
+    }
+  },
+  "avg_retrieval_latency_ms": 32.9,
+  "per_question": [
+    {
+      "id": "q01",
+      "topic": "dense_retrieval",
+      "question": "How do single versus multiple vector representations compare for retrieving passages?",
+      "relevant_paper_ids": [
+        "2108.06279"
+      ],
+      "retrieved_paper_ids": [
+        "2204.08241",
+        "2108.06279",
+        "2108.06027",
+        "2508.09534",
+        "2410.15801",
+        "2406.18960",
+        "2212.09598",
+        "2402.11035",
+        "2205.02303",
+        "1912.03135"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q02",
+      "topic": "dense_retrieval",
+      "question": "What masking strategy during pre-training improves a language model for retrieval tasks?",
+      "relevant_paper_ids": [
+        "2210.15133"
+      ],
+      "retrieved_paper_ids": [
+        "2210.15133",
+        "1909.10351",
+        "2212.09598",
+        "2412.09827",
+        "2106.11740",
+        "2409.02228",
+        "2411.00744",
+        "2503.21676",
+        "2508.09534",
+        "2401.15391"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q03",
+      "topic": "dense_retrieval",
+      "question": "Can generating questions without supervision improve which passages get ranked highest?",
+      "relevant_paper_ids": [
+        "2204.07496"
+      ],
+      "retrieved_paper_ids": [
+        "2307.08803",
+        "2204.07496",
+        "2404.07220",
+        "2205.02303",
+        "2503.00238",
+        "2304.05366",
+        "1303.5685",
+        "2605.28222",
+        "2411.00744",
+        "2104.05740"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q04",
+      "topic": "dense_retrieval",
+      "question": "How fragile are dual encoder retrieval systems when the input query contains typographical errors?",
+      "relevant_paper_ids": [
+        "2205.02303",
+        "2403.10939"
+      ],
+      "retrieved_paper_ids": [
+        "2205.02303",
+        "2108.06027",
+        "2204.08241",
+        "2403.10939",
+        "2108.06279",
+        "2307.08803",
+        "2410.15801",
+        "2508.09534",
+        "2406.18960",
+        "2404.07220"
+      ],
+      "recall@3": 0.5,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "precision@10": 0.2
+    },
+    {
+      "id": "q05",
+      "topic": "dense_retrieval",
+      "question": "Does supplying more than one correct passage per training example help retriever quality?",
+      "relevant_paper_ids": [
+        "2508.09534"
+      ],
+      "retrieved_paper_ids": [
+        "2508.09534",
+        "2402.11035",
+        "2104.05740",
+        "2403.10939",
+        "2108.06279",
+        "2210.15133",
+        "2108.06027",
+        "2212.09598",
+        "2406.18960",
+        "2410.15801"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q06",
+      "topic": "dense_retrieval",
+      "question": "Is dense retrieval actually performing semantic matching, or something shallower?",
+      "relevant_paper_ids": [
+        "2402.11035"
+      ],
+      "retrieved_paper_ids": [
+        "2108.06279",
+        "2104.05740",
+        "2402.11035",
+        "2204.08241",
+        "2108.06027",
+        "2410.15801",
+        "2205.02303",
+        "2403.10939",
+        "2508.09534",
+        "2404.07220"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q07",
+      "topic": "dense_retrieval",
+      "question": "How can natural language inference signals be used to tune a retriever?",
+      "relevant_paper_ids": [
+        "2410.15801"
+      ],
+      "retrieved_paper_ids": [
+        "2502.00306",
+        "2401.15391",
+        "2411.00744",
+        "2410.15801",
+        "2510.22344",
+        "1610.07647",
+        "2007.05872",
+        "2205.02303",
+        "2108.06279",
+        "2210.02627"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q08",
+      "topic": "dense_retrieval",
+      "question": "What approach rewrites a user's follow-up question so it can be searched in a conversational setting?",
+      "relevant_paper_ids": [
+        "2406.18960"
+      ],
+      "retrieved_paper_ids": [
+        "2406.18960",
+        "2307.08803",
+        "2503.00238",
+        "2301.05508",
+        "2001.09734",
+        "2205.02303",
+        "2510.25518",
+        "2403.10939",
+        "2204.08241",
+        "2510.22344"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q09",
+      "topic": "dense_retrieval",
+      "question": "Do retrieval findings from one document domain transfer to a different domain?",
+      "relevant_paper_ids": [
+        "2301.05508"
+      ],
+      "retrieved_paper_ids": [
+        "2210.02627",
+        "2006.12694",
+        "2301.05508",
+        "1605.06636",
+        "2107.02847",
+        "2108.06279",
+        "1812.01063",
+        "2511.22858",
+        "2002.12462",
+        "2601.05264"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q10",
+      "topic": "dense_retrieval",
+      "question": "How is passage search applied to finding groups of matching patients?",
+      "relevant_paper_ids": [
+        "2507.01049"
+      ],
+      "retrieved_paper_ids": [
+        "2507.01049",
+        "2108.06027",
+        "2104.05740",
+        "2605.12335",
+        "2406.18960",
+        "2402.11035",
+        "2111.07407",
+        "2503.00238",
+        "2208.01127",
+        "1811.11674"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q11",
+      "topic": "rag",
+      "question": "What are the architectural components involved in building a production retrieval-augmented system?",
+      "relevant_paper_ids": [
+        "2601.05264"
+      ],
+      "retrieved_paper_ids": [
+        "2601.05264",
+        "2510.25518",
+        "2309.15217",
+        "2510.22344",
+        "2402.11035",
+        "2108.06279",
+        "2404.15939",
+        "2410.15801",
+        "2605.12335",
+        "2411.00744"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q12",
+      "topic": "rag",
+      "question": "How can a retrieval-augmented pipeline iteratively refine its own answers for faithfulness?",
+      "relevant_paper_ids": [
+        "2510.22344"
+      ],
+      "retrieved_paper_ids": [
+        "2510.22344",
+        "2502.00306",
+        "2401.15391",
+        "2309.15217",
+        "2410.15801",
+        "2402.12317",
+        "2601.05264",
+        "2412.12881",
+        "2301.05508",
+        "2104.05740"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q13",
+      "topic": "rag",
+      "question": "What benchmark tests whether a system can chain evidence across several documents?",
+      "relevant_paper_ids": [
+        "2401.15391"
+      ],
+      "retrieved_paper_ids": [
+        "2510.22344",
+        "1803.00158",
+        "2605.25356",
+        "2501.15893",
+        "1904.00324",
+        "2002.04640",
+        "2311.18356",
+        "2605.28222",
+        "2108.06279",
+        "2401.15391"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q14",
+      "topic": "rag",
+      "question": "Can an attacker determine whether a specific document sits in a retrieval system's knowledge base?",
+      "relevant_paper_ids": [
+        "2502.00306"
+      ],
+      "retrieved_paper_ids": [
+        "2402.11035",
+        "2502.00306",
+        "2410.15801",
+        "2104.05740",
+        "2511.22858",
+        "2503.00238",
+        "2108.06279",
+        "2510.25518",
+        "2301.05508",
+        "2404.07220"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q15",
+      "topic": "rag",
+      "question": "How can language models automate the process of surveying existing research?",
+      "relevant_paper_ids": [
+        "2411.18583"
+      ],
+      "retrieved_paper_ids": [
+        "2304.05366",
+        "2502.00306",
+        "2411.18583",
+        "1910.03806",
+        "2503.21676",
+        "2301.13816",
+        "2510.22344",
+        "2411.00744",
+        "2412.12881",
+        "2007.05872"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q16",
+      "topic": "lora_peft",
+      "question": "What modification to learning rates makes low-rank adaptation converge better?",
+      "relevant_paper_ids": [
+        "2402.12354"
+      ],
+      "retrieved_paper_ids": [
+        "2606.16454",
+        "2506.20629",
+        "2402.12354",
+        "2607.11940",
+        "2212.07295",
+        "2406.03136",
+        "2202.13733",
+        "2202.04005",
+        "2006.12694",
+        "2512.15233"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q17",
+      "topic": "lora_peft",
+      "question": "How is low-rank adaptation aggregated when training is distributed across many clients?",
+      "relevant_paper_ids": [
+        "2411.14961"
+      ],
+      "retrieved_paper_ids": [
+        "2606.14416",
+        "2402.12354",
+        "2106.03300",
+        "2606.16454",
+        "2506.20629",
+        "2112.14332",
+        "2604.27796",
+        "1911.07652",
+        "2406.03136",
+        "2112.09429"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "precision@10": 0.0
+    },
+    {
+      "id": "q18",
+      "topic": "lora_peft",
+      "question": "What technique reduces the memory footprint of activations during low-rank fine-tuning?",
+      "relevant_paper_ids": [
+        "2607.11940"
+      ],
+      "retrieved_paper_ids": [
+        "2607.11940",
+        "2410.20625",
+        "2606.16454",
+        "2411.14961",
+        "2512.15233",
+        "2506.20629",
+        "2407.18242",
+        "2411.10764",
+        "2412.09827",
+        "1310.3101"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q19",
+      "topic": "lora_peft",
+      "question": "How can adapting weights within the null space avoid interfering with existing knowledge?",
+      "relevant_paper_ids": [
+        "2512.15233"
+      ],
+      "retrieved_paper_ids": [
+        "2512.15233",
+        "2406.03136",
+        "2006.12694",
+        "2412.13847",
+        "2606.16454",
+        "2310.09028",
+        "2002.12462",
+        "1907.01992",
+        "2607.04306",
+        "2312.03218"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q20",
+      "topic": "lora_peft",
+      "question": "Can several separately trained adapters be combined into a single one?",
+      "relevant_paper_ids": [
+        "2606.03723"
+      ],
+      "retrieved_paper_ids": [
+        "2606.03723",
+        "1402.1349",
+        "1812.01662",
+        "1709.03239",
+        "2402.03220",
+        "1605.06636",
+        "1505.06279",
+        "2202.03881",
+        "1712.07704",
+        "1912.09789"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q21",
+      "topic": "lora_peft",
+      "question": "Are low-rank adapters being optimized correctly, and what are the theoretical limits?",
+      "relevant_paper_ids": [
+        "2407.18242",
+        "2406.03136"
+      ],
+      "retrieved_paper_ids": [
+        "2407.18242",
+        "2410.20625",
+        "2406.03136",
+        "2606.03723",
+        "2604.27796",
+        "2512.15233",
+        "2402.12354",
+        "2506.20629",
+        "2605.28222",
+        "2607.04306"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "precision@10": 0.2
+    },
+    {
+      "id": "q22",
+      "topic": "lora_peft",
+      "question": "How can task-specific features be emphasized during parameter-efficient adaptation?",
+      "relevant_paper_ids": [
+        "2412.09827"
+      ],
+      "retrieved_paper_ids": [
+        "2412.09827",
+        "2012.02684",
+        "2411.14961",
+        "2512.15233",
+        "2606.16454",
+        "2002.04317",
+        "2412.13847",
+        "2005.10242",
+        "2510.09561",
+        "2505.06595"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q23",
+      "topic": "lora_peft",
+      "question": "How is spectral alignment applied to transfer knowledge into a smaller model?",
+      "relevant_paper_ids": [
+        "2607.04306"
+      ],
+      "retrieved_paper_ids": [
+        "2607.04306",
+        "2005.10242",
+        "2411.08374",
+        "2402.11035",
+        "2506.09781",
+        "2303.17475",
+        "2505.06595",
+        "2002.02561",
+        "2002.04881",
+        "1909.10351"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q24",
+      "topic": "federated_learning",
+      "question": "What aggregation method handles clients whose data distributions differ substantially?",
+      "relevant_paper_ids": [
+        "2112.09429"
+      ],
+      "retrieved_paper_ids": [
+        "2506.08169",
+        "2501.17634",
+        "1911.07652",
+        "1502.02215",
+        "2411.14961",
+        "2112.09429",
+        "2605.25353",
+        "1607.01400",
+        "2606.14416",
+        "2306.04338"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q25",
+      "topic": "federated_learning",
+      "question": "What are the major unsolved research problems in distributed collaborative training?",
+      "relevant_paper_ids": [
+        "1912.04977"
+      ],
+      "retrieved_paper_ids": [
+        "2306.05764",
+        "2205.15614",
+        "2406.08267",
+        "1912.04977",
+        "1911.05861",
+        "2007.14390",
+        "2005.08854",
+        "1912.09789",
+        "1603.09035",
+        "1909.11201"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q26",
+      "topic": "federated_learning",
+      "question": "How does distillation reduce the communication cost of on-device training?",
+      "relevant_paper_ids": [
+        "1811.11479"
+      ],
+      "retrieved_paper_ids": [
+        "1811.11479",
+        "2007.01135",
+        "2308.12175",
+        "2211.01296",
+        "1909.10351",
+        "2105.13809",
+        "2005.08854",
+        "1910.09700",
+        "2607.04306",
+        "2606.04279"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q27",
+      "topic": "federated_learning",
+      "question": "What happens to a distributed model when some participants deliberately corrupt their labels?",
+      "relevant_paper_ids": [
+        "2412.18507"
+      ],
+      "retrieved_paper_ids": [
+        "2412.18507",
+        "2402.14015",
+        "2208.01127",
+        "2503.09330",
+        "1810.10731",
+        "2106.04757",
+        "1910.00189",
+        "2102.06004",
+        "2111.05672",
+        "2505.05295"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q28",
+      "topic": "federated_learning",
+      "question": "How can privacy guarantees be varied per participant rather than applied uniformly?",
+      "relevant_paper_ids": [
+        "2501.17634"
+      ],
+      "retrieved_paper_ids": [
+        "2501.17634",
+        "1909.12732",
+        "1502.06309",
+        "1911.05861",
+        "1901.09697",
+        "2402.02230",
+        "2303.15563",
+        "2408.05212",
+        "2011.09350",
+        "2207.10896"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q29",
+      "topic": "federated_learning",
+      "question": "How is differential privacy combined with collaborative training on medical records?",
+      "relevant_paper_ids": [
+        "1911.05861"
+      ],
+      "retrieved_paper_ids": [
+        "1911.05861",
+        "1910.02578",
+        "2408.05212",
+        "2402.02230",
+        "1502.06309",
+        "1901.09697",
+        "2210.00053",
+        "2501.17634",
+        "2303.15563",
+        "1909.11201"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q30",
+      "topic": "federated_learning",
+      "question": "Can sparse subnetworks be identified at initialization to make distributed training cheaper?",
+      "relevant_paper_ids": [
+        "2405.09037"
+      ],
+      "retrieved_paper_ids": [
+        "2405.09037",
+        "2106.00058",
+        "1903.05895",
+        "1906.01827",
+        "2005.08854",
+        "1905.10988",
+        "2106.11740",
+        "2212.07295",
+        "2301.00944",
+        "2112.14332"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q31",
+      "topic": "federated_learning",
+      "question": "How do game-theoretic incentives affect whether participants cooperate honestly?",
+      "relevant_paper_ids": [
+        "2509.02391"
+      ],
+      "retrieved_paper_ids": [
+        "2010.12797",
+        "2509.02391",
+        "2306.05764",
+        "2002.10904",
+        "1911.02455",
+        "2509.23462",
+        "2207.13596",
+        "1706.09249",
+        "1803.04383",
+        "2303.06021"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q32",
+      "topic": "meta_learning",
+      "question": "How can the inner and outer learning rates of MAML be adapted automatically?",
+      "relevant_paper_ids": [
+        "1905.07435"
+      ],
+      "retrieved_paper_ids": [
+        "1905.07435",
+        "1810.03642",
+        "2310.06148",
+        "2212.07295",
+        "2406.04344",
+        "2201.09750",
+        "1507.02592",
+        "2106.04008",
+        "2502.15962",
+        "2506.14110"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q33",
+      "topic": "meta_learning",
+      "question": "What is the overall landscape of methods for learning to learn in sequential decision problems?",
+      "relevant_paper_ids": [
+        "2301.08028"
+      ],
+      "retrieved_paper_ids": [
+        "1803.00590",
+        "1809.02869",
+        "2002.05551",
+        "1807.11398",
+        "2106.06508",
+        "2509.20008",
+        "2208.03520",
+        "2005.01917",
+        "2304.05366",
+        "2307.12158"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "recall@10": 0.0,
+      "precision@10": 0.0
+    },
+    {
+      "id": "q34",
+      "topic": "meta_learning",
+      "question": "How does separating exploring from exploiting improve adaptation to new tasks?",
+      "relevant_paper_ids": [
+        "2008.02790",
+        "2010.01062"
+      ],
+      "retrieved_paper_ids": [
+        "2008.02790",
+        "2010.01062",
+        "1812.05551",
+        "2012.02684",
+        "2007.06918",
+        "2107.12808",
+        "2205.10250",
+        "2412.13847",
+        "1803.00590",
+        "2410.08355"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "precision@10": 0.2
+    },
+    {
+      "id": "q35",
+      "topic": "meta_learning",
+      "question": "What PAC-Bayesian guarantees exist for learning across a distribution of tasks?",
+      "relevant_paper_ids": [
+        "2002.05551",
+        "2402.04054"
+      ],
+      "retrieved_paper_ids": [
+        "2402.04054",
+        "2002.05551",
+        "2502.15962",
+        "2302.11709",
+        "2012.02684",
+        "2301.08028",
+        "1909.06434",
+        "1809.02869",
+        "2202.13890",
+        "1807.11398"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "recall@10": 1.0,
+      "precision@10": 0.2
+    },
+    {
+      "id": "q36",
+      "topic": "meta_learning",
+      "question": "How can a model rapidly adjust to new context with very few gradient updates?",
+      "relevant_paper_ids": [
+        "1810.03642"
+      ],
+      "retrieved_paper_ids": [
+        "2406.00793",
+        "2006.05987",
+        "2307.13365",
+        "1810.03642",
+        "2106.09685",
+        "2606.16454",
+        "2406.12785",
+        "1806.07377",
+        "2604.14519",
+        "2212.04458"
+      ],
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q37",
+      "topic": "meta_learning",
+      "question": "How is in-context learning applied to protein sequence models?",
+      "relevant_paper_ids": [
+        "2410.08355"
+      ],
+      "retrieved_paper_ids": [
+        "2406.00793",
+        "2406.12785",
+        "2410.08355",
+        "2212.04458",
+        "2401.04491",
+        "2505.05577",
+        "2509.17208",
+        "1807.05527",
+        "2512.01287",
+        "2010.08162"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q38",
+      "topic": "contrastive_embeddings",
+      "question": "What properties of alignment and uniformity explain why contrastive objectives work?",
+      "relevant_paper_ids": [
+        "2005.10242"
+      ],
+      "retrieved_paper_ids": [
+        "2005.10242",
+        "2506.09781",
+        "2406.17098",
+        "2605.26355",
+        "2201.10859",
+        "1505.06813",
+        "2502.15962",
+        "2208.02048",
+        "1902.09154",
+        "2207.13596"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q39",
+      "topic": "contrastive_embeddings",
+      "question": "How similar do learned vector representations become when trained with contrastive objectives?",
+      "relevant_paper_ids": [
+        "2506.09781"
+      ],
+      "retrieved_paper_ids": [
+        "2005.10242",
+        "2506.09781",
+        "2502.15962",
+        "2002.12462",
+        "2201.10859",
+        "2303.17475",
+        "1809.10780",
+        "1803.03234",
+        "2011.12216",
+        "2406.17098"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q40",
+      "topic": "contrastive_embeddings",
+      "question": "How can hierarchical relationships be encoded in non-Euclidean vector space?",
+      "relevant_paper_ids": [
+        "1804.01882"
+      ],
+      "retrieved_paper_ids": [
+        "1804.01882",
+        "2002.04881",
+        "1905.06147",
+        "1807.05527",
+        "2407.08086",
+        "2103.04046",
+        "2106.04739",
+        "2501.05646",
+        "1806.05009",
+        "2412.13847"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q41",
+      "topic": "contrastive_embeddings",
+      "question": "What method speeds up graph representation learning by reducing graph size first?",
+      "relevant_paper_ids": [
+        "2007.02817"
+      ],
+      "retrieved_paper_ids": [
+        "1910.03081",
+        "2007.02817",
+        "2107.02363",
+        "2604.20078",
+        "2002.00727",
+        "2505.05577",
+        "2203.13534",
+        "2002.05842",
+        "1506.06962",
+        "1204.4539"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    },
+    {
+      "id": "q42",
+      "topic": "contrastive_embeddings",
+      "question": "How does self-supervised pretraining perform on sensor timeseries for clinical prediction?",
+      "relevant_paper_ids": [
+        "2111.07089"
+      ],
+      "retrieved_paper_ids": [
+        "2111.07089",
+        "1909.09246",
+        "1906.10343",
+        "1811.10455",
+        "2208.02670",
+        "2403.13369",
+        "1811.12583",
+        "1811.08840",
+        "2104.04569",
+        "2411.04285"
+      ],
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "recall@10": 1.0,
+      "precision@10": 0.1
+    }
+  ]
+}
