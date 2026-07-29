@@ -104,7 +104,7 @@ answer_llm = ChatGroq(
 # ============================================================
 # Step 5 — Hybrid search with fixes
 # ============================================================
-RELEVANCE_THRESHOLD = 0.0
+RELEVANCE_THRESHOLD = -10.0
 
 def hybrid_search(query, k_semantic=15, k_bm25=15, k_final=4):
     # Stage 1A — Semantic
