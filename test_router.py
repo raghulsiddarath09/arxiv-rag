@@ -167,7 +167,18 @@ def test_threshold_high_is_always_dense():
 # Integration — skipped unless the real pipeline is importable
 # ──────────────────────────────────────────────────────────
 def _pipeline_available():
-    import os
+    """
+    True only when the real rag_pipeline can be imported.
+
+    test_api.py installs a MagicMock at sys.modules['rag_pipeline'] to keep
+    its own suite fast. If that has already happened, importing here returns
+    the mock, and comparisons on mock attributes raise TypeError. Detect that
+    and skip rather than fail.
+    """
+    import os, sys
+    from unittest.mock import MagicMock
+    if isinstance(sys.modules.get("rag_pipeline"), MagicMock):
+        return False
     return os.path.exists("faiss_index/index.faiss") and os.path.exists("papers_cache.json")
 
 
