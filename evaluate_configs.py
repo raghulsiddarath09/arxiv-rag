@@ -1,33 +1,41 @@
 """
 evaluate_configs.py — Day 26 retrieval ablation.
 
-Measures the SAME 42-question eval set across four retrieval
+Measures the SAME 42-question eval set across five retrieval
 configurations to isolate what each pipeline stage actually buys:
 
   1. dense_only     FAISS similarity search
   2. bm25_only      BM25Okapi lexical search
-  3. hybrid_rerank  FAISS + BM25 merge -> cross-encoder rerank
-  4. multiquery     LLM query expansion -> hybrid -> rerank  (production)
+  3. dense_rerank   FAISS candidates -> cross-encoder rerank (NO BM25)
+  4. hybrid_rerank  FAISS + BM25 merge -> cross-encoder rerank
+  5. multiquery     LLM query expansion -> hybrid -> rerank  (production)
+
+WHY dense_rerank EXISTS:
+  hybrid_rerank underperforms dense_only. Two candidate explanations:
+    (a) BM25 injects low-quality candidates that dilute the pool
+    (b) the ms-marco cross-encoder doesn't transfer to academic abstracts
+  dense_rerank isolates (b) by removing BM25 while keeping the reranker.
+    dense_rerank > dense_only  -> BM25 is the problem
+    dense_rerank < dense_only  -> the reranker is the problem
 
 Honest-measurement notes:
 
-* RELEVANCE_THRESHOLD. hybrid_search() and full_hybrid_retriever()
-  drop any doc scoring below the threshold AFTER truncating to k_final.
-  So configs 3 and 4 can legitimately return fewer than k results.
-  This caps Recall@k by design — it is production behavior, not a bug,
-  and the script reports mean returned-doc counts so the effect is visible
-  rather than hidden inside the recall number.
+* RELEVANCE_THRESHOLD. Configs using hybrid_search() / full_hybrid_retriever()
+  drop docs scoring below the threshold AFTER truncating to k_final, so they
+  can return fewer than k. dense_rerank replicates that logic including the
+  threshold, so the comparison stays fair.
 
-* Config 4 issues one Groq call per question for query expansion.
-  It is slow and consumes API quota. Use --skip multiquery to omit it.
+* Config 5 issues one Groq call per question. Slow, consumes quota.
+  Use --skip multiquery to omit it.
 
-* All configs are scored identically: chunks -> deduplicated paper IDs
-  in rank order -> Recall@k / Precision@k against verified ground truth.
+* All configs scored identically: chunks -> deduplicated paper IDs in rank
+  order -> Recall@k / Precision@k against verified ground truth.
 
 Usage:
-    python evaluate_configs.py                      # all four
-    python evaluate_configs.py --limit 5            # smoke test
-    python evaluate_configs.py --skip multiquery    # omit the slow one
+    python evaluate_configs.py
+    python evaluate_configs.py --limit 5
+    python evaluate_configs.py --skip multiquery bm25_only
+    python evaluate_configs.py --only dense_only dense_rerank hybrid_rerank
 """
 
 import argparse
@@ -43,8 +51,6 @@ PAPERS_FILE = "papers_cache.json"
 RESULTS_FILE = "eval_results_configs.json"
 K_VALUES = [3, 5, 10]
 
-# Over-fetch factor: retrieval returns chunks, we score papers.
-# Several chunks can collapse to one paper, so ask for more than k.
 CHUNK_OVERFETCH = 4
 
 
@@ -56,7 +62,6 @@ def normalize_id(raw):
 
 
 def docs_to_paper_ids(docs):
-    """Chunks -> unique paper IDs, preserving rank order."""
     seen, ordered = set(), []
     for d in docs:
         pid = normalize_id(d.metadata.get("paper_id") or d.metadata.get("id", ""))
@@ -90,11 +95,8 @@ def verify_eval_ids(questions, papers):
 # Configurations
 # ──────────────────────────────────────────────────────────
 def build_configs(rp, max_k):
-    """
-    rp is the imported rag_pipeline module. Each config is a callable
-    question -> list of chunk docs.
-    """
     n_chunks = max_k * CHUNK_OVERFETCH
+    threshold = getattr(rp, "RELEVANCE_THRESHOLD", float("-inf"))
 
     def dense_only(q):
         return rp.vectorstore.similarity_search(q, k=n_chunks)
@@ -104,9 +106,28 @@ def build_configs(rp, max_k):
         idx = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:n_chunks]
         return [rp.chunks[i] for i in idx]
 
+    def dense_rerank(q):
+        """
+        FAISS candidates only -> cross-encoder rerank.
+        Mirrors hybrid_search()'s rerank stage (same pool size, same
+        threshold) with the BM25 branch removed, so any difference vs
+        hybrid_rerank is attributable to BM25.
+        """
+        # 60 candidates ~= the pool hybrid_rerank gets (30 dense + 30 bm25)
+        candidates = rp.vectorstore.similarity_search(q, k=60)
+        if not candidates:
+            return []
+        pairs = [[q, d.page_content] for d in candidates]
+        scores = rp.cross_encoder.predict(pairs)
+        ranked = sorted(zip(scores, candidates), key=lambda x: x[0], reverse=True)
+        out = []
+        for score, doc in ranked[:n_chunks]:
+            if score > threshold:
+                doc.metadata["rerank_score"] = float(score)
+                out.append(doc)
+        return out
+
     def hybrid_rerank(q):
-        # Wider candidate pools than the production default so that
-        # k=10 is reachable; rerank still decides final ordering.
         return rp.hybrid_search(q, k_semantic=30, k_bm25=30, k_final=n_chunks)
 
     def multiquery(q):
@@ -115,6 +136,7 @@ def build_configs(rp, max_k):
     return [
         ("dense_only", dense_only, "FAISS similarity search only"),
         ("bm25_only", bm25_only, "BM25Okapi lexical search only"),
+        ("dense_rerank", dense_rerank, "FAISS -> cross-encoder rerank (no BM25)"),
         ("hybrid_rerank", hybrid_rerank, "FAISS + BM25 -> cross-encoder rerank"),
         ("multiquery", multiquery, "LLM query expansion -> hybrid -> rerank"),
     ]
@@ -174,8 +196,9 @@ def run_config(name, fn, questions):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
-    ap.add_argument("--skip", nargs="*", default=[],
-                    help="Config names to skip, e.g. --skip multiquery")
+    ap.add_argument("--skip", nargs="*", default=[])
+    ap.add_argument("--only", nargs="*", default=None,
+                    help="Run only these configs (overrides --skip)")
     args = ap.parse_args()
 
     with open(EVAL_FILE) as f:
@@ -202,11 +225,14 @@ def main():
     import rag_pipeline as rp
     thr = getattr(rp, "RELEVANCE_THRESHOLD", None)
     print(f"  RELEVANCE_THRESHOLD = {thr}")
-    print("  (configs 3 and 4 drop docs below this, so they may return < k)")
 
-    configs = [c for c in build_configs(rp, max(K_VALUES)) if c[0] not in args.skip]
+    all_configs = build_configs(rp, max(K_VALUES))
+    if args.only:
+        configs = [c for c in all_configs if c[0] in args.only]
+    else:
+        configs = [c for c in all_configs if c[0] not in args.skip]
+
     results = []
-
     for name, fn, desc in configs:
         print(f"\n{'=' * 60}\n{name}  —  {desc}\n{'=' * 60}")
         results.append(run_config(name, fn, questions))
@@ -215,8 +241,7 @@ def main():
     print("\n" + "=" * 78)
     print("CONFIGURATION COMPARISON")
     print("=" * 78)
-    hdr = f"{'config':<16}{'R@3':>9}{'R@5':>9}{'R@10':>9}{'P@3':>9}{'lat(ms)':>11}{'docs':>7}"
-    print(hdr)
+    print(f"{'config':<16}{'R@3':>9}{'R@5':>9}{'R@10':>9}{'P@3':>9}{'lat(ms)':>11}{'docs':>7}")
     print("-" * 78)
     for r in results:
         o = r["overall"]
@@ -237,10 +262,37 @@ def main():
             d3 = r["overall"]["recall@3"] - base["overall"]["recall@3"]
             d5 = r["overall"]["recall@5"] - base["overall"]["recall@5"]
             cost = r["mean_latency_ms"] / base["mean_latency_ms"] if base["mean_latency_ms"] else 0
-            print(f"  {r['config']:<16} R@3 {d3:+.1%}   R@5 {d5:+.1%}   "
-                  f"latency {cost:.1f}x")
+            print(f"  {r['config']:<16} R@3 {d3:+.1%}   R@5 {d5:+.1%}   latency {cost:.1f}x")
 
-    # ── Per-topic Recall@3 ──
+    # ── BM25 vs reranker attribution ──
+    dr = next((r for r in results if r["config"] == "dense_rerank"), None)
+    hr = next((r for r in results if r["config"] == "hybrid_rerank"), None)
+    if dr and hr and base:
+        print("\n" + "=" * 78)
+        print("ATTRIBUTION: is BM25 or the reranker responsible?")
+        print("=" * 78)
+        d_base = base["overall"]["recall@3"]
+        d_dr = dr["overall"]["recall@3"]
+        d_hr = hr["overall"]["recall@3"]
+        print(f"  dense_only        {d_base:>7.1%}   (no rerank, no BM25)")
+        print(f"  dense_rerank      {d_dr:>7.1%}   (rerank, no BM25)   reranker effect: {d_dr - d_base:+.1%}")
+        print(f"  hybrid_rerank     {d_hr:>7.1%}   (rerank + BM25)     BM25 effect:     {d_hr - d_dr:+.1%}")
+        print()
+        if d_dr >= d_base and d_hr < d_dr:
+            print("  READ: reranker helps; BM25 dilutes the candidate pool.")
+            print("  ACTION: drop BM25 from the merge, keep reranking.")
+        elif d_dr < d_base and d_hr < d_dr:
+            print("  READ: both hurt. The reranker does not transfer to this")
+            print("        domain, and BM25 compounds the problem.")
+            print("  ACTION: ship dense_only.")
+        elif d_dr < d_base:
+            print("  READ: the cross-encoder is the primary problem — it demotes")
+            print("        documents FAISS already ranked correctly.")
+            print("  ACTION: ship dense_only, or try a domain-appropriate reranker.")
+        else:
+            print("  READ: reranking helps overall. Weigh against latency cost.")
+
+    # ── Per-topic ──
     print("\n" + "=" * 78)
     print("RECALL@3 BY TOPIC")
     print("=" * 78)

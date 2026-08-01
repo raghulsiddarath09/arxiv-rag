@@ -1,0 +1,287 @@
+{
+  "_meta": {
+    "name": "abstract_rare_v1",
+    "corpus": "papers_cache.json (1100 papers)",
+    "purpose": "Third eval set. Questions are anchored on high-IDF terms that appear in a paper's ABSTRACT BODY but NOT in its title. This removes the confound present in lexical_entity_v1, where every chunk begins with 'Title: ...' and every question reused title tokens, causing all methods to saturate at 98-100%.",
+    "hypothesis": "Sparse retrieval (BM25) and hybrid outperform dense-only here. Rationale: bi-encoder embeddings compress a whole chunk into one vector, smoothing over low-frequency tokens that carry little semantic weight but high discriminative power. Exact term matching does not smooth.",
+    "construction": "Terms selected programmatically: tokens with IDF > 6.5 present in the abstract but absent from the title. Questions written around the strongest technical/entity terms only; common English words that happen to be corpus-rare ('wishing', 'arrive') were discarded as unnatural query material.",
+    "honest_caveats": [
+      "Constructed to favour lexical retrieval. Must be reported alongside eval_dataset.json (paraphrase, dense-favouring) and lexical_entity_v1 (saturated). No single set characterises this system.",
+      "Some anchor terms are obscure enough that a real user would be unlikely to query them. This is a lexical STRESS TEST, not a model of the production query distribution.",
+      "n=30 is small; a single question shifts Recall@3 by 3.3 points. Treat margins under ~7 points as noise."
+    ],
+    "id_format": "Bare arXiv ID, no prefix, no version suffix."
+  },
+  "questions": [
+    {
+      "id": "A01",
+      "style": "abstract_rare",
+      "topic": "neural_architectures",
+      "question": "Which method is compared against SIREN for approximating nonperiodic signals?",
+      "anchor_terms": ["siren", "nonperiodic"],
+      "relevant_paper_ids": ["2509.08759"],
+      "relevant_titles": ["Fourier Learning Machines: Nonharmonic Fourier-Based Neural Networks"]
+    },
+    {
+      "id": "A02",
+      "style": "abstract_rare",
+      "topic": "meta_learning",
+      "question": "Which approach is evaluated on tieredImageNet and Omniglot benchmarks?",
+      "anchor_terms": ["tieredimagenet", "omniglot"],
+      "relevant_paper_ids": ["1905.06549"],
+      "relevant_titles": ["TapNet: Neural Network Augmented with Task-Adaptive Projection"]
+    },
+    {
+      "id": "A03",
+      "style": "abstract_rare",
+      "topic": "healthcare_ml",
+      "question": "Which work reports Jaccard similarity results using MART and JSC?",
+      "anchor_terms": ["jaccard", "mart", "jsc"],
+      "relevant_paper_ids": ["1810.13348"],
+      "relevant_titles": ["Multimodal Machine Learning for Automated ICD Coding"]
+    },
+    {
+      "id": "A04",
+      "style": "abstract_rare",
+      "topic": "privacy",
+      "question": "What is BDP and how does it improve on the moments accountant?",
+      "anchor_terms": ["bdp", "accountant"],
+      "relevant_paper_ids": ["1901.09697"],
+      "relevant_titles": ["Bayesian Differential Privacy for Machine Learning"]
+    },
+    {
+      "id": "A05",
+      "style": "abstract_rare",
+      "topic": "embeddings",
+      "question": "How does node2vec behave under exchangeable graph assumptions?",
+      "anchor_terms": ["node2vec", "exchangeable"],
+      "relevant_paper_ids": ["2107.02363"],
+      "relevant_titles": ["Asymptotics of Network Embeddings Learned via Subsampling"]
+    },
+    {
+      "id": "A06",
+      "style": "abstract_rare",
+      "topic": "interpretability",
+      "question": "What is LIME and how does it explain individual predictions?",
+      "anchor_terms": ["lime"],
+      "relevant_paper_ids": ["1606.05386"],
+      "relevant_titles": ["Model-Agnostic Interpretability of Machine Learning"]
+    },
+    {
+      "id": "A07",
+      "style": "abstract_rare",
+      "topic": "optimization",
+      "question": "Which optimizer introduces inertia and tame criticality, benchmarked against Adagrad?",
+      "anchor_terms": ["inertia", "tame", "criticality", "adagrad"],
+      "relevant_paper_ids": ["1905.12278"],
+      "relevant_titles": ["An Inertial Newton Algorithm for Deep Learning"]
+    },
+    {
+      "id": "A08",
+      "style": "abstract_rare",
+      "topic": "privacy",
+      "question": "What is PPML and what are its prospects for prognosis applications?",
+      "anchor_terms": ["ppml", "prognosis"],
+      "relevant_paper_ids": ["2303.15563"],
+      "relevant_titles": ["Privacy-preserving machine learning for healthcare: open challenges and future perspectives"]
+    },
+    {
+      "id": "A09",
+      "style": "abstract_rare",
+      "topic": "applications",
+      "question": "How is hotspot detection and DFM handled in lithography workflows?",
+      "anchor_terms": ["hotspot", "dfm", "lithography"],
+      "relevant_paper_ids": ["1912.05796"],
+      "relevant_titles": ["Automatic Layout Generation with Applications in Machine Learning"]
+    },
+    {
+      "id": "A10",
+      "style": "abstract_rare",
+      "topic": "interpretability",
+      "question": "How are ILP and abduction combined in a declarative teaching setting?",
+      "anchor_terms": ["ilp", "abduction", "declarative"],
+      "relevant_paper_ids": ["2205.10250"],
+      "relevant_titles": ["Explanatory machine learning for sequential human teaching"]
+    },
+    {
+      "id": "A11",
+      "style": "abstract_rare",
+      "topic": "infrastructure",
+      "question": "Which schema builds on W3C standards to enable interchange and interoperability?",
+      "anchor_terms": ["w3c", "interchange", "interoperability"],
+      "relevant_paper_ids": ["1807.05351"],
+      "relevant_titles": ["ML-Schema: Exposing the Semantics of Machine Learning with Schemas and Ontologies"]
+    },
+    {
+      "id": "A12",
+      "style": "abstract_rare",
+      "topic": "healthcare_ml",
+      "question": "How does subitem-level PHQ prediction compare unitask against multitask models?",
+      "anchor_terms": ["phq", "subitem", "unitask"],
+      "relevant_paper_ids": ["2501.09687"],
+      "relevant_titles": ["U-Fair: Uncertainty-based Multimodal Multitask Learning for Fairness"]
+    },
+    {
+      "id": "A13",
+      "style": "abstract_rare",
+      "topic": "healthcare_ml",
+      "question": "How are analyte measurements and CCG data incorporated into the framework?",
+      "anchor_terms": ["analyte", "ccg"],
+      "relevant_paper_ids": ["1811.10455"],
+      "relevant_titles": ["A Framework for Implementing Machine Learning on Omics Data"]
+    },
+    {
+      "id": "A14",
+      "style": "abstract_rare",
+      "topic": "neural_architectures",
+      "question": "How is PointNet applied to gesture recognition with asynchronous readout?",
+      "anchor_terms": ["pointnet", "gesture", "readout"],
+      "relevant_paper_ids": ["2402.01393"],
+      "relevant_titles": ["ALERT-Transformer: Bridging Asynchronous and Synchronous Machine Learning"]
+    },
+    {
+      "id": "A15",
+      "style": "abstract_rare",
+      "topic": "embeddings",
+      "question": "How is layered linkage structure used to learn representations?",
+      "anchor_terms": ["linkage", "layered", "wherein"],
+      "relevant_paper_ids": ["1812.09225"],
+      "relevant_titles": ["Learning Representations from Dendrograms"]
+    },
+    {
+      "id": "A16",
+      "style": "abstract_rare",
+      "topic": "applications",
+      "question": "Which study evaluates progenitor models and different EOSs in relativistic simulations?",
+      "anchor_terms": ["progenitor", "eoss", "relativistic"],
+      "relevant_paper_ids": ["2409.14508"],
+      "relevant_titles": ["Evaluating Machine Learning Models for Supernova Gravitational Wave Signals"]
+    },
+    {
+      "id": "A17",
+      "style": "abstract_rare",
+      "topic": "applications",
+      "question": "How are black swan events modelled for internationally traded imports?",
+      "anchor_terms": ["swan", "traded", "imports", "internationally"],
+      "relevant_paper_ids": ["2111.07508"],
+      "relevant_titles": ["Public Policymaking for International Agricultural Trade using Association Rules"]
+    },
+    {
+      "id": "A18",
+      "style": "abstract_rare",
+      "topic": "theory",
+      "question": "How do inhomogeneous payoffs and utilities drive wealth accumulation?",
+      "anchor_terms": ["payoffs", "inhomogeneous", "utilities", "accumulation"],
+      "relevant_paper_ids": ["1206.6443"],
+      "relevant_titles": ["Isoelastic Agents and Wealth Updates in Machine Learning Markets"]
+    },
+    {
+      "id": "A19",
+      "style": "abstract_rare",
+      "topic": "ethics_policy",
+      "question": "How do tort liability and civil liberties intersect with adversarial attacks?",
+      "anchor_terms": ["tort", "liberties", "civil", "crime"],
+      "relevant_paper_ids": ["1810.10731"],
+      "relevant_titles": ["Law and Adversarial Machine Learning"]
+    },
+    {
+      "id": "A20",
+      "style": "abstract_rare",
+      "topic": "systems",
+      "question": "How is quicksort used to illustrate hybridizing programming with learned components?",
+      "anchor_terms": ["quicksort", "hybridize", "stabilize"],
+      "relevant_paper_ids": ["1810.00619"],
+      "relevant_titles": ["SmartChoices: Hybridizing Programming and Machine Learning"]
+    },
+    {
+      "id": "A21",
+      "style": "abstract_rare",
+      "topic": "rl",
+      "question": "How are homeostasis and appraisal theories applied to HRI agents?",
+      "anchor_terms": ["homeostasis", "appraisal", "hri"],
+      "relevant_paper_ids": ["1705.05172"],
+      "relevant_titles": ["Emotion in Reinforcement Learning Agents and Robots: A Survey"]
+    },
+    {
+      "id": "A22",
+      "style": "abstract_rare",
+      "topic": "interpretability",
+      "question": "How are conserved quantities and invariants used to interpret molecule models?",
+      "anchor_terms": ["invariants", "conserved", "molecule", "analogues"],
+      "relevant_paper_ids": ["2304.02381"],
+      "relevant_titles": ["Physics-Inspired Interpretability Of Machine Learning Models"]
+    },
+    {
+      "id": "A23",
+      "style": "abstract_rare",
+      "topic": "automl",
+      "question": "What is AlphaD3M?",
+      "anchor_terms": ["alphad3m"],
+      "relevant_paper_ids": ["1905.10345"],
+      "relevant_titles": ["Automatic Machine Learning by Pipeline Synthesis using Model-Based Reinforcement Learning"]
+    },
+    {
+      "id": "A24",
+      "style": "abstract_rare",
+      "topic": "fairness",
+      "question": "What is ALFA and how is it used by an analyst for compliance?",
+      "anchor_terms": ["alfa", "analyst", "compliant"],
+      "relevant_paper_ids": ["2108.07380"],
+      "relevant_titles": ["InfoGram and Admissible Machine Learning"]
+    },
+    {
+      "id": "A25",
+      "style": "abstract_rare",
+      "topic": "quantum",
+      "question": "Which discovery engine provides tooling for reservoir computing reproductions?",
+      "anchor_terms": ["reservoir", "tooling", "reproductions"],
+      "relevant_paper_ids": ["2602.11092"],
+      "relevant_titles": ["MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning"]
+    },
+    {
+      "id": "A26",
+      "style": "abstract_rare",
+      "topic": "theory",
+      "question": "How are log determinant estimates computed from spectral moments?",
+      "anchor_terms": ["determinant", "moments"],
+      "relevant_paper_ids": ["1906.01101"],
+      "relevant_titles": ["MEMe: An Accurate Maximum Entropy Method for Efficient Approximations"]
+    },
+    {
+      "id": "A27",
+      "style": "abstract_rare",
+      "topic": "fairness",
+      "question": "Which work references the Tangri equation when quantifying bias?",
+      "anchor_terms": ["tangri"],
+      "relevant_paper_ids": ["1911.07679"],
+      "relevant_titles": ["Towards Quantification of Bias in Machine Learning for Healthcare"]
+    },
+    {
+      "id": "A28",
+      "style": "abstract_rare",
+      "topic": "meta_learning",
+      "question": "Which method primes learning rates to eliminate a shortcoming of MAML on Omniglot?",
+      "anchor_terms": ["primes", "shortcoming", "omniglot", "eliminates"],
+      "relevant_paper_ids": ["1905.07435"],
+      "relevant_titles": ["Alpha MAML: Adaptive Model-Agnostic Meta-Learning"]
+    },
+    {
+      "id": "A29",
+      "style": "abstract_rare",
+      "topic": "process",
+      "question": "How does a categorised view of learning curves aid suitability decisions?",
+      "anchor_terms": ["categorises", "suitability", "expediting"],
+      "relevant_paper_ids": ["2201.12150"],
+      "relevant_titles": ["Learning Curves for Decision Making in Supervised Machine Learning"]
+    },
+    {
+      "id": "A30",
+      "style": "abstract_rare",
+      "topic": "systems",
+      "question": "Which survey gives an expansive reformulation of predominant on-device algorithms?",
+      "anchor_terms": ["expansive", "reformulation", "predominant", "equitably"],
+      "relevant_paper_ids": ["1911.00623"],
+      "relevant_titles": ["On-Device Machine Learning: An Algorithms and Learning Theory Perspective"]
+    }
+  ]
+}

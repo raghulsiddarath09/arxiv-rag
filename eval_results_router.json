@@ -1,0 +1,3767 @@
+{
+  "n_questions": 72,
+  "sets": [
+    "abstract_rare_v1",
+    "eval_dataset.json"
+  ],
+  "sweep": [
+    {
+      "threshold": 0.0,
+      "recall@3": 0.8194444444444444,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9444444444444444,
+      "latency_ms": 833.9565965248362,
+      "pct_hybrid": 100.0
+    },
+    {
+      "threshold": 2.0,
+      "recall@3": 0.8194444444444444,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9444444444444444,
+      "latency_ms": 833.9565965248362,
+      "pct_hybrid": 100.0
+    },
+    {
+      "threshold": 3.0,
+      "recall@3": 0.8194444444444444,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9444444444444444,
+      "latency_ms": 833.9565965248362,
+      "pct_hybrid": 100.0
+    },
+    {
+      "threshold": 4.0,
+      "recall@3": 0.8194444444444444,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9444444444444444,
+      "latency_ms": 833.9565965248362,
+      "pct_hybrid": 100.0
+    },
+    {
+      "threshold": 5.0,
+      "recall@3": 0.8333333333333334,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9444444444444444,
+      "latency_ms": 825.4867296224498,
+      "pct_hybrid": 98.61111111111111
+    },
+    {
+      "threshold": 6.0,
+      "recall@3": 0.8611111111111112,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9305555555555556,
+      "latency_ms": 709.1406070265091,
+      "pct_hybrid": 83.33333333333333
+    },
+    {
+      "threshold": 7.0,
+      "recall@3": 0.8472222222222222,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9305555555555556,
+      "latency_ms": 515.4974777235313,
+      "pct_hybrid": 58.333333333333336
+    },
+    {
+      "threshold": 8.0,
+      "recall@3": 0.8541666666666666,
+      "recall@5": 0.8888888888888888,
+      "recall@10": 0.9305555555555556,
+      "latency_ms": 380.59528408403924,
+      "pct_hybrid": 43.05555555555556
+    },
+    {
+      "threshold": 100.0,
+      "recall@3": 0.7986111111111112,
+      "recall@5": 0.8611111111111112,
+      "recall@10": 0.8888888888888888,
+      "latency_ms": 33.74969608557876,
+      "pct_hybrid": 0.0
+    }
+  ],
+  "best": {
+    "threshold": 6.0,
+    "recall@3": 0.8611111111111112,
+    "recall@5": 0.8888888888888888,
+    "recall@10": 0.9305555555555556,
+    "latency_ms": 709.1406070265091,
+    "pct_hybrid": 83.33333333333333
+  },
+  "records": [
+    {
+      "id": "q01",
+      "set": "eval_dataset.json",
+      "question": "How do single versus multiple vector representations compare for retrieving passages?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2108.06279"
+      ],
+      "dense": {
+        "latency_ms": 603.467445995193,
+        "retrieved": [
+          "2204.08241",
+          "2108.06279",
+          "2108.06027",
+          "2508.09534",
+          "2410.15801",
+          "2406.18960",
+          "2212.09598",
+          "2402.11035",
+          "2205.02303",
+          "1912.03135"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1124.2769730160944,
+        "retrieved": [
+          "2108.06279",
+          "2204.08241",
+          "2508.09534",
+          "2307.04461",
+          "2402.11035",
+          "2406.18960",
+          "2108.06027",
+          "1407.5416",
+          "2401.15391",
+          "2212.09598"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q02",
+      "set": "eval_dataset.json",
+      "question": "What masking strategy during pre-training improves a language model for retrieval tasks?",
+      "max_idf": 6.549,
+      "relevant": [
+        "2210.15133"
+      ],
+      "dense": {
+        "latency_ms": 152.4685430340469,
+        "retrieved": [
+          "2210.15133",
+          "1909.10351",
+          "2212.09598",
+          "2412.09827",
+          "2106.11740",
+          "2409.02228",
+          "2411.00744",
+          "2503.21676",
+          "2508.09534",
+          "2401.15391"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 869.1673779976554,
+        "retrieved": [
+          "2210.15133",
+          "2103.16110",
+          "2204.07496",
+          "1909.10351",
+          "2503.21676",
+          "2106.11740",
+          "2402.11035",
+          "2212.09598",
+          "2411.00744",
+          "2401.15391"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q03",
+      "set": "eval_dataset.json",
+      "question": "Can generating questions without supervision improve which passages get ranked highest?",
+      "max_idf": 6.405,
+      "relevant": [
+        "2204.07496"
+      ],
+      "dense": {
+        "latency_ms": 34.51172902714461,
+        "retrieved": [
+          "2307.08803",
+          "2204.07496",
+          "2404.07220",
+          "2205.02303",
+          "2503.00238",
+          "2304.05366",
+          "1303.5685",
+          "2605.28222",
+          "2411.00744",
+          "2104.05740"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1143.3134350227192,
+        "retrieved": [
+          "2204.07496",
+          "2212.09598",
+          "2503.00238",
+          "2205.02303",
+          "2508.09534",
+          "2108.03762",
+          "2204.08241",
+          "2307.08803",
+          "2104.14847",
+          "2106.03300"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q04",
+      "set": "eval_dataset.json",
+      "question": "How fragile are dual encoder retrieval systems when the input query contains typographical errors?",
+      "max_idf": 5.744,
+      "relevant": [
+        "2205.02303",
+        "2403.10939"
+      ],
+      "dense": {
+        "latency_ms": 37.16457402333617,
+        "retrieved": [
+          "2205.02303",
+          "2108.06027",
+          "2204.08241",
+          "2403.10939",
+          "2108.06279",
+          "2307.08803",
+          "2410.15801",
+          "2508.09534",
+          "2406.18960",
+          "2404.07220"
+        ],
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      },
+      "hybrid": {
+        "latency_ms": 706.5350089687854,
+        "retrieved": [
+          "2204.08241",
+          "2508.09534",
+          "2205.02303",
+          "2108.06027",
+          "2403.10939",
+          "2404.07220",
+          "2410.15801",
+          "2306.03566",
+          "2406.18960",
+          "2307.08803"
+        ],
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      }
+    },
+    {
+      "id": "q05",
+      "set": "eval_dataset.json",
+      "question": "Does supplying more than one correct passage per training example help retriever quality?",
+      "max_idf": 6.28,
+      "relevant": [
+        "2508.09534"
+      ],
+      "dense": {
+        "latency_ms": 23.828869976568967,
+        "retrieved": [
+          "2508.09534",
+          "2402.11035",
+          "2104.05740",
+          "2403.10939",
+          "2108.06279",
+          "2210.15133",
+          "2108.06027",
+          "2212.09598",
+          "2406.18960",
+          "2410.15801"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 941.6475130128674,
+        "retrieved": [
+          "2508.09534",
+          "2403.10939",
+          "2212.09598",
+          "2108.06027",
+          "2210.15133",
+          "2104.05740",
+          "2204.07496",
+          "2406.18960",
+          "2205.00970",
+          "2402.11035"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q06",
+      "set": "eval_dataset.json",
+      "question": "Is dense retrieval actually performing semantic matching, or something shallower?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2402.11035"
+      ],
+      "dense": {
+        "latency_ms": 36.53572400799021,
+        "retrieved": [
+          "2108.06279",
+          "2104.05740",
+          "2402.11035",
+          "2204.08241",
+          "2108.06027",
+          "2410.15801",
+          "2205.02303",
+          "2403.10939",
+          "2508.09534",
+          "2404.07220"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 817.6398479845375,
+        "retrieved": [
+          "2204.08241",
+          "2205.02303",
+          "2404.07220",
+          "2108.06027",
+          "2104.05740",
+          "2508.09534",
+          "2403.10939",
+          "2402.11035",
+          "2205.00970",
+          "2108.06279"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q07",
+      "set": "eval_dataset.json",
+      "question": "How can natural language inference signals be used to tune a retriever?",
+      "max_idf": 6.28,
+      "relevant": [
+        "2410.15801"
+      ],
+      "dense": {
+        "latency_ms": 23.754202004056424,
+        "retrieved": [
+          "2502.00306",
+          "2401.15391",
+          "2411.00744",
+          "2410.15801",
+          "2510.22344",
+          "1610.07647",
+          "2007.05872",
+          "2205.02303",
+          "2108.06279",
+          "2210.02627"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 856.961085984949,
+        "retrieved": [
+          "2410.15801",
+          "2108.06027",
+          "2502.00306",
+          "2007.05872",
+          "2406.00793",
+          "2205.02303",
+          "2307.13365",
+          "1909.07218",
+          "2411.00744",
+          "2406.04344"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q08",
+      "set": "eval_dataset.json",
+      "question": "What approach rewrites a user's follow-up question so it can be searched in a conversational setting?",
+      "max_idf": 7.505,
+      "relevant": [
+        "2406.18960"
+      ],
+      "dense": {
+        "latency_ms": 30.928777006920427,
+        "retrieved": [
+          "2406.18960",
+          "2307.08803",
+          "2503.00238",
+          "2301.05508",
+          "2001.09734",
+          "2205.02303",
+          "2510.25518",
+          "2403.10939",
+          "2204.08241",
+          "2510.22344"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1140.8247930230573,
+        "retrieved": [
+          "2406.18960",
+          "2301.05508",
+          "2307.08803",
+          "2503.00238",
+          "2204.07496",
+          "2001.09734",
+          "2510.25518",
+          "1910.04956",
+          "2205.02303",
+          "1911.05861"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q09",
+      "set": "eval_dataset.json",
+      "question": "Do retrieval findings from one document domain transfer to a different domain?",
+      "max_idf": 5.397,
+      "relevant": [
+        "2301.05508"
+      ],
+      "dense": {
+        "latency_ms": 30.63800500240177,
+        "retrieved": [
+          "2210.02627",
+          "2006.12694",
+          "2301.05508",
+          "1605.06636",
+          "2107.02847",
+          "2108.06279",
+          "1812.01063",
+          "2511.22858",
+          "2002.12462",
+          "2601.05264"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 739.4880289793946,
+        "retrieved": [
+          "2006.12694",
+          "2204.07496",
+          "2301.05508",
+          "1605.06636",
+          "2210.02627",
+          "2510.25518",
+          "1812.01063",
+          "2104.05740",
+          "2402.11035",
+          "2605.11989"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q10",
+      "set": "eval_dataset.json",
+      "question": "How is passage search applied to finding groups of matching patients?",
+      "max_idf": 5.556,
+      "relevant": [
+        "2507.01049"
+      ],
+      "dense": {
+        "latency_ms": 24.244275002274662,
+        "retrieved": [
+          "2507.01049",
+          "2108.06027",
+          "2104.05740",
+          "2605.12335",
+          "2406.18960",
+          "2402.11035",
+          "2111.07407",
+          "2503.00238",
+          "2208.01127",
+          "1811.11674"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 739.1576140071265,
+        "retrieved": [
+          "2507.01049",
+          "2503.00238",
+          "2108.06027",
+          "2108.06279",
+          "2205.00970",
+          "2406.18960",
+          "2212.09598",
+          "2402.11035",
+          "2104.05740",
+          "2206.03003"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q11",
+      "set": "eval_dataset.json",
+      "question": "What are the architectural components involved in building a production retrieval-augmented system?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2601.05264"
+      ],
+      "dense": {
+        "latency_ms": 21.964320039842278,
+        "retrieved": [
+          "2601.05264",
+          "2510.25518",
+          "2309.15217",
+          "2510.22344",
+          "2402.11035",
+          "2108.06279",
+          "2404.15939",
+          "2410.15801",
+          "2605.12335",
+          "2411.00744"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 826.448526000604,
+        "retrieved": [
+          "2511.22858",
+          "2510.25518",
+          "2601.05264",
+          "2309.15217",
+          "2402.12317",
+          "2605.28222",
+          "2410.15801",
+          "2402.11035",
+          "2605.12335",
+          "2510.22344"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q12",
+      "set": "eval_dataset.json",
+      "question": "How can a retrieval-augmented pipeline iteratively refine its own answers for faithfulness?",
+      "max_idf": 6.917,
+      "relevant": [
+        "2510.22344"
+      ],
+      "dense": {
+        "latency_ms": 30.57562100002542,
+        "retrieved": [
+          "2510.22344",
+          "2502.00306",
+          "2401.15391",
+          "2309.15217",
+          "2410.15801",
+          "2402.12317",
+          "2601.05264",
+          "2412.12881",
+          "2301.05508",
+          "2104.05740"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 787.4932120321319,
+        "retrieved": [
+          "2510.22344",
+          "2402.12317",
+          "2605.28222",
+          "2309.15217",
+          "2401.15391",
+          "2510.25518",
+          "2502.00306",
+          "2309.01692",
+          "2412.12881",
+          "2406.18960"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q13",
+      "set": "eval_dataset.json",
+      "question": "What benchmark tests whether a system can chain evidence across several documents?",
+      "max_idf": 6.405,
+      "relevant": [
+        "2401.15391"
+      ],
+      "dense": {
+        "latency_ms": 23.429925029631704,
+        "retrieved": [
+          "2510.22344",
+          "1803.00158",
+          "2605.25356",
+          "2501.15893",
+          "1904.00324",
+          "2002.04640",
+          "2311.18356",
+          "2605.28222",
+          "2108.06279",
+          "2401.15391"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 914.846130006481,
+        "retrieved": [
+          "1912.03905",
+          "2510.22344",
+          "2401.15391",
+          "2311.18356",
+          "1803.00158",
+          "1910.03806",
+          "1206.6485",
+          "1803.10311",
+          "2501.15893",
+          "2109.08618"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q14",
+      "set": "eval_dataset.json",
+      "question": "Can an attacker determine whether a specific document sits in a retrieval system's knowledge base?",
+      "max_idf": 7.505,
+      "relevant": [
+        "2502.00306"
+      ],
+      "dense": {
+        "latency_ms": 24.643982003908604,
+        "retrieved": [
+          "2402.11035",
+          "2502.00306",
+          "2410.15801",
+          "2104.05740",
+          "2511.22858",
+          "2503.00238",
+          "2108.06279",
+          "2510.25518",
+          "2301.05508",
+          "2404.07220"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 788.5923699941486,
+        "retrieved": [
+          "2404.07220",
+          "2402.11035",
+          "2502.00306",
+          "2210.02627",
+          "2511.22858",
+          "2510.25518",
+          "2301.05508",
+          "1909.12732",
+          "2507.01049",
+          "2401.15391"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q15",
+      "set": "eval_dataset.json",
+      "question": "How can language models automate the process of surveying existing research?",
+      "max_idf": 7.505,
+      "relevant": [
+        "2411.18583"
+      ],
+      "dense": {
+        "latency_ms": 24.467838986311108,
+        "retrieved": [
+          "2304.05366",
+          "2502.00306",
+          "2411.18583",
+          "1910.03806",
+          "2503.21676",
+          "2301.13816",
+          "2510.22344",
+          "2411.00744",
+          "2412.12881",
+          "2007.05872"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 744.1119580180384,
+        "retrieved": [
+          "2411.18583",
+          "2412.12881",
+          "2003.03384",
+          "2509.09146",
+          "1910.03806",
+          "2304.05366",
+          "2301.13816",
+          "2503.21676",
+          "2502.00306",
+          "1904.00324"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q16",
+      "set": "eval_dataset.json",
+      "question": "What modification to learning rates makes low-rank adaptation converge better?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2402.12354"
+      ],
+      "dense": {
+        "latency_ms": 26.747536030597985,
+        "retrieved": [
+          "2606.16454",
+          "2506.20629",
+          "2402.12354",
+          "2607.11940",
+          "2212.07295",
+          "2406.03136",
+          "2202.13733",
+          "2202.04005",
+          "2006.12694",
+          "2512.15233"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 613.5897050262429,
+        "retrieved": [
+          "2506.20629",
+          "2402.12354",
+          "2606.16454",
+          "2606.03723",
+          "2607.11940",
+          "2604.27796",
+          "2406.03136",
+          "2412.09827",
+          "2512.15233",
+          "2106.09685"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q17",
+      "set": "eval_dataset.json",
+      "question": "How is low-rank adaptation aggregated when training is distributed across many clients?",
+      "max_idf": 5.977,
+      "relevant": [
+        "2411.14961"
+      ],
+      "dense": {
+        "latency_ms": 18.77929497277364,
+        "retrieved": [
+          "2606.14416",
+          "2402.12354",
+          "2106.03300",
+          "2606.16454",
+          "2506.20629",
+          "2112.14332",
+          "2604.27796",
+          "1911.07652",
+          "2406.03136",
+          "2112.09429"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 824.1512720123865,
+        "retrieved": [
+          "2606.03723",
+          "2606.16454",
+          "2506.20629",
+          "2607.11940",
+          "2601.21109",
+          "2512.15233",
+          "2402.12354",
+          "2406.03136",
+          "2412.09827",
+          "2411.14961"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q18",
+      "set": "eval_dataset.json",
+      "question": "What technique reduces the memory footprint of activations during low-rank fine-tuning?",
+      "max_idf": 6.917,
+      "relevant": [
+        "2607.11940"
+      ],
+      "dense": {
+        "latency_ms": 26.281642029061913,
+        "retrieved": [
+          "2607.11940",
+          "2410.20625",
+          "2606.16454",
+          "2411.14961",
+          "2512.15233",
+          "2506.20629",
+          "2407.18242",
+          "2411.10764",
+          "2412.09827",
+          "1310.3101"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 616.7781350086443,
+        "retrieved": [
+          "2607.11940",
+          "2410.20625",
+          "2506.20629",
+          "2606.16454",
+          "2411.14961",
+          "2604.27796",
+          "2407.18242",
+          "2512.15233",
+          "2406.03136",
+          "2412.09827"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q19",
+      "set": "eval_dataset.json",
+      "question": "How can adapting weights within the null space avoid interfering with existing knowledge?",
+      "max_idf": 7.168,
+      "relevant": [
+        "2512.15233"
+      ],
+      "dense": {
+        "latency_ms": 18.55458103818819,
+        "retrieved": [
+          "2512.15233",
+          "2406.03136",
+          "2006.12694",
+          "2412.13847",
+          "2606.16454",
+          "2310.09028",
+          "2002.12462",
+          "1907.01992",
+          "2607.04306",
+          "2312.03218"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 807.401496975217,
+        "retrieved": [
+          "2512.15233",
+          "2412.13847",
+          "2304.02381",
+          "2606.16454",
+          "2310.09028",
+          "2406.03136",
+          "2007.06918",
+          "2312.03218",
+          "2106.07214",
+          "2011.01103"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q20",
+      "set": "eval_dataset.json",
+      "question": "Can several separately trained adapters be combined into a single one?",
+      "max_idf": 6.28,
+      "relevant": [
+        "2606.03723"
+      ],
+      "dense": {
+        "latency_ms": 23.926914029289037,
+        "retrieved": [
+          "2606.03723",
+          "1402.1349",
+          "1812.01662",
+          "1709.03239",
+          "2402.03220",
+          "1605.06636",
+          "1505.06279",
+          "2202.03881",
+          "1712.07704",
+          "1912.09789"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 683.8800749974325,
+        "retrieved": [
+          "2606.03723",
+          "2411.09776",
+          "1605.06636",
+          "2001.11328",
+          "2112.11429",
+          "2304.05366",
+          "1106.4509",
+          "2510.19579",
+          "2412.06087",
+          "1812.01662"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q21",
+      "set": "eval_dataset.json",
+      "question": "Are low-rank adapters being optimized correctly, and what are the theoretical limits?",
+      "max_idf": 6.28,
+      "relevant": [
+        "2407.18242",
+        "2406.03136"
+      ],
+      "dense": {
+        "latency_ms": 26.112359017133713,
+        "retrieved": [
+          "2407.18242",
+          "2410.20625",
+          "2406.03136",
+          "2606.03723",
+          "2604.27796",
+          "2512.15233",
+          "2402.12354",
+          "2506.20629",
+          "2605.28222",
+          "2607.04306"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      },
+      "hybrid": {
+        "latency_ms": 828.8647519657388,
+        "retrieved": [
+          "2410.20625",
+          "2406.03136",
+          "2407.18242",
+          "2506.20629",
+          "2604.27796",
+          "2606.03723",
+          "2402.12354",
+          "2512.15233",
+          "1310.5035",
+          "1411.4510"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      }
+    },
+    {
+      "id": "q22",
+      "set": "eval_dataset.json",
+      "question": "How can task-specific features be emphasized during parameter-efficient adaptation?",
+      "max_idf": 4.257,
+      "relevant": [
+        "2412.09827"
+      ],
+      "dense": {
+        "latency_ms": 20.936820015776902,
+        "retrieved": [
+          "2412.09827",
+          "2012.02684",
+          "2411.14961",
+          "2512.15233",
+          "2606.16454",
+          "2002.04317",
+          "2412.13847",
+          "2005.10242",
+          "2510.09561",
+          "2505.06595"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 630.7672369875945,
+        "retrieved": [
+          "2606.03723",
+          "2411.14961",
+          "2512.15233",
+          "2412.09827",
+          "2606.16454",
+          "2604.27796",
+          "2606.14416",
+          "2607.11940",
+          "2012.02684",
+          "2310.09028"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q23",
+      "set": "eval_dataset.json",
+      "question": "How is spectral alignment applied to transfer knowledge into a smaller model?",
+      "max_idf": 5.678,
+      "relevant": [
+        "2607.04306"
+      ],
+      "dense": {
+        "latency_ms": 22.605895006563514,
+        "retrieved": [
+          "2607.04306",
+          "2005.10242",
+          "2411.08374",
+          "2402.11035",
+          "2506.09781",
+          "2303.17475",
+          "2505.06595",
+          "2002.02561",
+          "2002.04881",
+          "1909.10351"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 753.4220910165459,
+        "retrieved": [
+          "2607.04306",
+          "1909.10351",
+          "2411.08374",
+          "2301.13816",
+          "2204.12833",
+          "2605.26355",
+          "1812.01063",
+          "2004.11238",
+          "2605.11989",
+          "2309.07982"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q24",
+      "set": "eval_dataset.json",
+      "question": "What aggregation method handles clients whose data distributions differ substantially?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2112.09429"
+      ],
+      "dense": {
+        "latency_ms": 24.814695003442466,
+        "retrieved": [
+          "2506.08169",
+          "2501.17634",
+          "1911.07652",
+          "1502.02215",
+          "2411.14961",
+          "2112.09429",
+          "2605.25353",
+          "1607.01400",
+          "2606.14416",
+          "2306.04338"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 724.0031660185196,
+        "retrieved": [
+          "2606.14416",
+          "2501.17634",
+          "2007.06081",
+          "1607.01400",
+          "2112.09429",
+          "2205.06117",
+          "1911.07652",
+          "2411.14961",
+          "2506.08169",
+          "2412.18507"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q25",
+      "set": "eval_dataset.json",
+      "question": "What are the major unsolved research problems in distributed collaborative training?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1912.04977"
+      ],
+      "dense": {
+        "latency_ms": 22.49492798000574,
+        "retrieved": [
+          "2306.05764",
+          "2205.15614",
+          "2406.08267",
+          "1912.04977",
+          "1911.05861",
+          "2007.14390",
+          "2005.08854",
+          "1912.09789",
+          "1603.09035",
+          "1909.11201"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 839.8492830456235,
+        "retrieved": [
+          "2005.08854",
+          "2212.11729",
+          "1912.09789",
+          "2406.08267",
+          "2205.14550",
+          "1909.11201",
+          "2205.15614",
+          "1603.09035",
+          "1911.05861",
+          "1812.10426"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      }
+    },
+    {
+      "id": "q26",
+      "set": "eval_dataset.json",
+      "question": "How does distillation reduce the communication cost of on-device training?",
+      "max_idf": 5.744,
+      "relevant": [
+        "1811.11479"
+      ],
+      "dense": {
+        "latency_ms": 22.005625010933727,
+        "retrieved": [
+          "1811.11479",
+          "2007.01135",
+          "2308.12175",
+          "2211.01296",
+          "1909.10351",
+          "2105.13809",
+          "2005.08854",
+          "1910.09700",
+          "2607.04306",
+          "2606.04279"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 907.6788889942691,
+        "retrieved": [
+          "1811.11479",
+          "1512.02673",
+          "1603.09035",
+          "2211.01296",
+          "1909.10351",
+          "2112.14332",
+          "1909.11201",
+          "2607.04306",
+          "1911.00623",
+          "2308.12175"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q27",
+      "set": "eval_dataset.json",
+      "question": "What happens to a distributed model when some participants deliberately corrupt their labels?",
+      "max_idf": 7.168,
+      "relevant": [
+        "2412.18507"
+      ],
+      "dense": {
+        "latency_ms": 24.041769036557525,
+        "retrieved": [
+          "2412.18507",
+          "2402.14015",
+          "2208.01127",
+          "2503.09330",
+          "1810.10731",
+          "2106.04757",
+          "1910.00189",
+          "2102.06004",
+          "2111.05672",
+          "2505.05295"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 879.1417159955017,
+        "retrieved": [
+          "2111.05672",
+          "2208.01127",
+          "2412.18507",
+          "1910.00189",
+          "1911.07652",
+          "2308.12175",
+          "2102.06004",
+          "1909.11201",
+          "2402.14015",
+          "1811.11400"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q28",
+      "set": "eval_dataset.json",
+      "question": "How can privacy guarantees be varied per participant rather than applied uniformly?",
+      "max_idf": 7.505,
+      "relevant": [
+        "2501.17634"
+      ],
+      "dense": {
+        "latency_ms": 24.478691979311407,
+        "retrieved": [
+          "2501.17634",
+          "1909.12732",
+          "1502.06309",
+          "1911.05861",
+          "1901.09697",
+          "2402.02230",
+          "2303.15563",
+          "2408.05212",
+          "2011.09350",
+          "2207.10896"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 968.7624759972095,
+        "retrieved": [
+          "1901.09697",
+          "1909.12732",
+          "2501.17634",
+          "2506.14110",
+          "1502.06309",
+          "1911.05861",
+          "2108.12978",
+          "2011.09350",
+          "2010.07259",
+          "2408.05212"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q29",
+      "set": "eval_dataset.json",
+      "question": "How is differential privacy combined with collaborative training on medical records?",
+      "max_idf": 5.447,
+      "relevant": [
+        "1911.05861"
+      ],
+      "dense": {
+        "latency_ms": 25.53766901837662,
+        "retrieved": [
+          "1911.05861",
+          "1910.02578",
+          "2408.05212",
+          "2402.02230",
+          "1502.06309",
+          "1901.09697",
+          "2210.00053",
+          "2501.17634",
+          "2303.15563",
+          "1909.11201"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 648.8551450311206,
+        "retrieved": [
+          "2408.05212",
+          "1901.09697",
+          "1910.02578",
+          "1911.05861",
+          "2402.02230",
+          "1502.06309",
+          "2501.17634",
+          "2108.12978",
+          "2303.15563",
+          "2210.00053"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q30",
+      "set": "eval_dataset.json",
+      "question": "Can sparse subnetworks be identified at initialization to make distributed training cheaper?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2405.09037"
+      ],
+      "dense": {
+        "latency_ms": 20.584303012583405,
+        "retrieved": [
+          "2405.09037",
+          "2106.00058",
+          "1903.05895",
+          "1906.01827",
+          "2005.08854",
+          "1905.10988",
+          "2106.11740",
+          "2212.07295",
+          "2301.00944",
+          "2112.14332"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 903.5911959945224,
+        "retrieved": [
+          "2405.09037",
+          "1310.5035",
+          "2106.00058",
+          "1912.09789",
+          "1603.09035",
+          "2005.08854",
+          "2402.14015",
+          "2102.05639",
+          "1905.10988",
+          "1612.04898"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q31",
+      "set": "eval_dataset.json",
+      "question": "How do game-theoretic incentives affect whether participants cooperate honestly?",
+      "max_idf": 7.168,
+      "relevant": [
+        "2509.02391"
+      ],
+      "dense": {
+        "latency_ms": 23.840900976210833,
+        "retrieved": [
+          "2010.12797",
+          "2509.02391",
+          "2306.05764",
+          "2002.10904",
+          "1911.02455",
+          "2509.23462",
+          "2207.13596",
+          "1706.09249",
+          "1803.04383",
+          "2303.06021"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 888.5048529482447,
+        "retrieved": [
+          "2509.02391",
+          "2509.23462",
+          "2306.05764",
+          "2010.12797",
+          "1911.07652",
+          "1909.11201",
+          "2002.10904",
+          "2011.12443",
+          "2407.07664",
+          "1706.09249"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q32",
+      "set": "eval_dataset.json",
+      "question": "How can the inner and outer learning rates of MAML be adapted automatically?",
+      "max_idf": 7.505,
+      "relevant": [
+        "1905.07435"
+      ],
+      "dense": {
+        "latency_ms": 20.663470961153507,
+        "retrieved": [
+          "1905.07435",
+          "1810.03642",
+          "2310.06148",
+          "2212.07295",
+          "2406.04344",
+          "2201.09750",
+          "1507.02592",
+          "2106.04008",
+          "2502.15962",
+          "2506.14110"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 833.6724659893662,
+        "retrieved": [
+          "1905.07435",
+          "1810.03642",
+          "2310.06148",
+          "2406.04344",
+          "2506.14110",
+          "2201.09750",
+          "2106.04008",
+          "1507.02592",
+          "2212.07295",
+          "2503.18670"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q33",
+      "set": "eval_dataset.json",
+      "question": "What is the overall landscape of methods for learning to learn in sequential decision problems?",
+      "max_idf": 6.068,
+      "relevant": [
+        "2301.08028"
+      ],
+      "dense": {
+        "latency_ms": 21.097804012242705,
+        "retrieved": [
+          "1803.00590",
+          "1809.02869",
+          "2002.05551",
+          "1807.11398",
+          "2106.06508",
+          "2509.20008",
+          "2208.03520",
+          "2005.01917",
+          "2304.05366",
+          "2307.12158"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 704.5642550219782,
+        "retrieved": [
+          "1803.00590",
+          "2002.05551",
+          "1809.02869",
+          "2307.12158",
+          "1807.11398",
+          "2509.20008",
+          "2404.12511",
+          "1703.07915",
+          "2205.10250",
+          "1602.03943"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      }
+    },
+    {
+      "id": "q34",
+      "set": "eval_dataset.json",
+      "question": "How does separating exploring from exploiting improve adaptation to new tasks?",
+      "max_idf": 7.505,
+      "relevant": [
+        "2008.02790",
+        "2010.01062"
+      ],
+      "dense": {
+        "latency_ms": 23.659812984988093,
+        "retrieved": [
+          "2008.02790",
+          "2010.01062",
+          "1812.05551",
+          "2012.02684",
+          "2007.06918",
+          "2107.12808",
+          "2205.10250",
+          "2412.13847",
+          "1803.00590",
+          "2410.08355"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      },
+      "hybrid": {
+        "latency_ms": 800.5449090269394,
+        "retrieved": [
+          "2012.02684",
+          "2008.02790",
+          "1812.05551",
+          "2010.01062",
+          "1806.07377",
+          "2606.16454",
+          "2310.09028",
+          "2511.19491",
+          "2409.18574",
+          "1904.11203"
+        ],
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      }
+    },
+    {
+      "id": "q35",
+      "set": "eval_dataset.json",
+      "question": "What PAC-Bayesian guarantees exist for learning across a distribution of tasks?",
+      "max_idf": 5.744,
+      "relevant": [
+        "2002.05551",
+        "2402.04054"
+      ],
+      "dense": {
+        "latency_ms": 17.767692974302918,
+        "retrieved": [
+          "2402.04054",
+          "2002.05551",
+          "2502.15962",
+          "2302.11709",
+          "2012.02684",
+          "2301.08028",
+          "1909.06434",
+          "1809.02869",
+          "2202.13890",
+          "1807.11398"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      },
+      "hybrid": {
+        "latency_ms": 891.9285389711149,
+        "retrieved": [
+          "2402.04054",
+          "2506.14110",
+          "2002.05551",
+          "2502.15962",
+          "1512.09327",
+          "1901.09697",
+          "2310.09028",
+          "2012.02684",
+          "2301.08028",
+          "2302.11709"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2
+      }
+    },
+    {
+      "id": "q36",
+      "set": "eval_dataset.json",
+      "question": "How can a model rapidly adjust to new context with very few gradient updates?",
+      "max_idf": 6.917,
+      "relevant": [
+        "1810.03642"
+      ],
+      "dense": {
+        "latency_ms": 20.986975985579193,
+        "retrieved": [
+          "2406.00793",
+          "2006.05987",
+          "2307.13365",
+          "1810.03642",
+          "2106.09685",
+          "2606.16454",
+          "2406.12785",
+          "1806.07377",
+          "2604.14519",
+          "2212.04458"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1248.8577379845083,
+        "retrieved": [
+          "2606.16454",
+          "1905.07435",
+          "2006.05987",
+          "2310.09028",
+          "2005.09787",
+          "2406.00793",
+          "1810.03642",
+          "1906.01827",
+          "2307.13365",
+          "2212.04458"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q37",
+      "set": "eval_dataset.json",
+      "question": "How is in-context learning applied to protein sequence models?",
+      "max_idf": 5.678,
+      "relevant": [
+        "2410.08355"
+      ],
+      "dense": {
+        "latency_ms": 23.63232005154714,
+        "retrieved": [
+          "2406.00793",
+          "2406.12785",
+          "2410.08355",
+          "2212.04458",
+          "2401.04491",
+          "2505.05577",
+          "2509.17208",
+          "1807.05527",
+          "2512.01287",
+          "2010.08162"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 848.1794899562374,
+        "retrieved": [
+          "2410.08355",
+          "2406.00793",
+          "2406.12785",
+          "1712.07704",
+          "2212.04458",
+          "2505.05577",
+          "2401.04491",
+          "2308.02796",
+          "2606.11746",
+          "2503.02130"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q38",
+      "set": "eval_dataset.json",
+      "question": "What properties of alignment and uniformity explain why contrastive objectives work?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2005.10242"
+      ],
+      "dense": {
+        "latency_ms": 19.64601199142635,
+        "retrieved": [
+          "2005.10242",
+          "2506.09781",
+          "2406.17098",
+          "2605.26355",
+          "2201.10859",
+          "1505.06813",
+          "2502.15962",
+          "2208.02048",
+          "1902.09154",
+          "2207.13596"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 764.8620499530807,
+        "retrieved": [
+          "2005.10242",
+          "2506.09781",
+          "2510.01658",
+          "2001.09734",
+          "2406.17098",
+          "2502.15962",
+          "2201.10859",
+          "2503.08636",
+          "2202.13733",
+          "1909.09246"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q39",
+      "set": "eval_dataset.json",
+      "question": "How similar do learned vector representations become when trained with contrastive objectives?",
+      "max_idf": 5.102,
+      "relevant": [
+        "2506.09781"
+      ],
+      "dense": {
+        "latency_ms": 20.602752978447825,
+        "retrieved": [
+          "2005.10242",
+          "2506.09781",
+          "2502.15962",
+          "2002.12462",
+          "2201.10859",
+          "2303.17475",
+          "1809.10780",
+          "1803.03234",
+          "2011.12216",
+          "2406.17098"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 726.7842440051027,
+        "retrieved": [
+          "2005.10242",
+          "2011.12216",
+          "2502.15962",
+          "2506.09781",
+          "2406.17098",
+          "2303.17475",
+          "2411.17570",
+          "2201.10859",
+          "1912.03135",
+          "1803.03234"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q40",
+      "set": "eval_dataset.json",
+      "question": "How can hierarchical relationships be encoded in non-Euclidean vector space?",
+      "max_idf": 5.893,
+      "relevant": [
+        "1804.01882"
+      ],
+      "dense": {
+        "latency_ms": 23.879749001935124,
+        "retrieved": [
+          "1804.01882",
+          "2002.04881",
+          "1905.06147",
+          "1807.05527",
+          "2407.08086",
+          "2103.04046",
+          "2106.04739",
+          "2501.05646",
+          "1806.05009",
+          "2412.13847"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 857.5983580085449,
+        "retrieved": [
+          "1804.01882",
+          "0010423",
+          "2008.13146",
+          "1904.13223",
+          "2105.09107",
+          "1912.12557",
+          "2407.08086",
+          "2002.04881",
+          "2011.06158",
+          "2107.02363"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q41",
+      "set": "eval_dataset.json",
+      "question": "What method speeds up graph representation learning by reducing graph size first?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2007.02817"
+      ],
+      "dense": {
+        "latency_ms": 23.439407988917083,
+        "retrieved": [
+          "1910.03081",
+          "2007.02817",
+          "2107.02363",
+          "2604.20078",
+          "2002.00727",
+          "2505.05577",
+          "2203.13534",
+          "2002.05842",
+          "1506.06962",
+          "1204.4539"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 767.1701890067197,
+        "retrieved": [
+          "2002.00727",
+          "1910.03081",
+          "1906.01827",
+          "2107.02363",
+          "2604.20078",
+          "2505.05577",
+          "2007.02817",
+          "2006.11184",
+          "2207.03368",
+          "2203.13534"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "q42",
+      "set": "eval_dataset.json",
+      "question": "How does self-supervised pretraining perform on sensor timeseries for clinical prediction?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2111.07089"
+      ],
+      "dense": {
+        "latency_ms": 22.077741974499077,
+        "retrieved": [
+          "2111.07089",
+          "1909.09246",
+          "1906.10343",
+          "1811.10455",
+          "2208.02670",
+          "2403.13369",
+          "1811.12583",
+          "1811.08840",
+          "2104.04569",
+          "2411.04285"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 741.1852389923297,
+        "retrieved": [
+          "2111.07089",
+          "2411.04285",
+          "1909.09246",
+          "1811.08840",
+          "1906.10343",
+          "2104.04569",
+          "2111.07407",
+          "2605.25353",
+          "2403.13369",
+          "2305.13689"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A01",
+      "set": "abstract_rare_v1",
+      "question": "Which method is compared against SIREN for approximating nonperiodic signals?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2509.08759"
+      ],
+      "dense": {
+        "latency_ms": 26.899051968939602,
+        "retrieved": [
+          "2509.08759",
+          "2006.01509",
+          "2211.02578",
+          "2411.09776",
+          "1106.1770",
+          "2210.02144",
+          "2510.01658",
+          "2202.13890",
+          "2503.14621",
+          "2111.13180"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 900.2831899560988,
+        "retrieved": [
+          "2509.08759",
+          "2006.01509",
+          "2402.13256",
+          "2412.00864",
+          "2104.04167",
+          "2508.20335",
+          "1612.05730",
+          "2106.06235",
+          "2405.18765",
+          "1806.04360"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A02",
+      "set": "abstract_rare_v1",
+      "question": "Which approach is evaluated on tieredImageNet and Omniglot benchmarks?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1905.06549"
+      ],
+      "dense": {
+        "latency_ms": 23.658498015720397,
+        "retrieved": [
+          "1803.00158",
+          "2406.08748",
+          "1808.07412",
+          "2501.15893",
+          "2604.05057",
+          "2112.04906",
+          "2605.25353",
+          "2502.04140",
+          "2105.10148",
+          "2601.21109"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 866.7389780166559,
+        "retrieved": [
+          "2510.19579",
+          "1905.06549",
+          "2509.20008",
+          "2501.15893",
+          "2506.06962",
+          "1910.12191",
+          "2212.09598",
+          "1803.00158",
+          "2310.14714",
+          "2410.05638"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A03",
+      "set": "abstract_rare_v1",
+      "question": "Which work reports Jaccard similarity results using MART and JSC?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1810.13348"
+      ],
+      "dense": {
+        "latency_ms": 19.510060956235975,
+        "retrieved": [
+          "1810.13348",
+          "2204.06518",
+          "2607.04306",
+          "2601.05264",
+          "2108.06279",
+          "2605.28222",
+          "2112.00423",
+          "1411.6725",
+          "1612.04108",
+          "2105.09107"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 761.5265399799682,
+        "retrieved": [
+          "1810.13348",
+          "1712.07704",
+          "1908.00698",
+          "2105.09107",
+          "2111.08011",
+          "2108.06027",
+          "1811.08772",
+          "2002.00727",
+          "2002.04881",
+          "1412.1074"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A04",
+      "set": "abstract_rare_v1",
+      "question": "What is BDP and how does it improve on the moments accountant?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1901.09697"
+      ],
+      "dense": {
+        "latency_ms": 18.64411000860855,
+        "retrieved": [
+          "1901.09697",
+          "2505.15638",
+          "2403.07843",
+          "2201.10859",
+          "1502.02215",
+          "2502.16344",
+          "2602.04861",
+          "2511.22858",
+          "1911.05861",
+          "2206.14987"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 837.4201300321147,
+        "retrieved": [
+          "1901.09697",
+          "2206.14987",
+          "1512.09327",
+          "2012.15816",
+          "2511.19491",
+          "2212.01415",
+          "2505.15638",
+          "1206.4656",
+          "2403.07843",
+          "2205.13462"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A05",
+      "set": "abstract_rare_v1",
+      "question": "How does node2vec behave under exchangeable graph assumptions?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2107.02363"
+      ],
+      "dense": {
+        "latency_ms": 23.645305016543716,
+        "retrieved": [
+          "2107.02363",
+          "2207.10896",
+          "1910.03081",
+          "1107.0194",
+          "2411.08374",
+          "2002.05842",
+          "2007.08216",
+          "2203.13534",
+          "2206.14987",
+          "2007.02817"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 743.7038350035436,
+        "retrieved": [
+          "2107.02363",
+          "2411.08374",
+          "2511.18225",
+          "2006.06592",
+          "1910.03081",
+          "2601.09455",
+          "2407.05526",
+          "2203.13534",
+          "1208.3561",
+          "2007.08216"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A06",
+      "set": "abstract_rare_v1",
+      "question": "What is LIME and how does it explain individual predictions?",
+      "max_idf": 7.505,
+      "relevant": [
+        "1606.05386"
+      ],
+      "dense": {
+        "latency_ms": 21.243882016278803,
+        "retrieved": [
+          "2202.01602",
+          "2002.08596",
+          "1808.05054",
+          "2009.10819",
+          "2103.03923",
+          "1909.09223",
+          "2409.06146",
+          "1901.00770",
+          "1905.08883",
+          "1801.08640"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 850.153184030205,
+        "retrieved": [
+          "1808.05054",
+          "2111.08749",
+          "1804.06620",
+          "1909.09223",
+          "2002.08596",
+          "2409.02228",
+          "1801.08640",
+          "2202.01602",
+          "2009.10819",
+          "2408.17016"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      }
+    },
+    {
+      "id": "A07",
+      "set": "abstract_rare_v1",
+      "question": "Which optimizer introduces inertia and tame criticality, benchmarked against Adagrad?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1905.12278"
+      ],
+      "dense": {
+        "latency_ms": 28.81750900996849,
+        "retrieved": [
+          "1905.12278",
+          "1405.4980",
+          "2312.03218",
+          "2406.19621",
+          "2105.03918",
+          "2108.01867",
+          "1712.07897",
+          "2207.13887",
+          "1803.03234",
+          "1310.5035"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 896.9414280145429,
+        "retrieved": [
+          "1905.12278",
+          "2410.20625",
+          "2509.02927",
+          "2406.04344",
+          "1703.00564",
+          "2207.13887",
+          "2508.20335",
+          "1405.4980",
+          "2406.19621",
+          "1803.03234"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A08",
+      "set": "abstract_rare_v1",
+      "question": "What is PPML and what are its prospects for prognosis applications?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2303.15563"
+      ],
+      "dense": {
+        "latency_ms": 22.756712045520544,
+        "retrieved": [
+          "2301.13816",
+          "2604.05057",
+          "2208.02670",
+          "1812.00596",
+          "2311.09329",
+          "2406.04344",
+          "2306.04748",
+          "2310.14714",
+          "1812.01074",
+          "2212.12303"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 875.5532240029424,
+        "retrieved": [
+          "2303.15563",
+          "2406.04344",
+          "2301.13816",
+          "1812.00596",
+          "2310.14714",
+          "1811.11674",
+          "1705.07538",
+          "2311.09329",
+          "2306.04748",
+          "1606.04838"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A09",
+      "set": "abstract_rare_v1",
+      "question": "How is hotspot detection and DFM handled in lithography workflows?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1912.05796"
+      ],
+      "dense": {
+        "latency_ms": 23.09209998929873,
+        "retrieved": [
+          "1912.05796",
+          "2405.03574",
+          "2212.07836",
+          "1106.1770",
+          "2508.14137",
+          "2305.19505",
+          "2007.14390",
+          "2211.01296",
+          "2604.05057",
+          "2207.03368"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 795.2229549991898,
+        "retrieved": [
+          "1912.05796",
+          "2405.03574",
+          "2412.07244",
+          "2204.04017",
+          "2010.02087",
+          "2605.14067",
+          "1803.10311",
+          "2405.06148",
+          "2410.12461",
+          "1512.01274"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A10",
+      "set": "abstract_rare_v1",
+      "question": "How are ILP and abduction combined in a declarative teaching setting?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2205.10250"
+      ],
+      "dense": {
+        "latency_ms": 20.01153101446107,
+        "retrieved": [
+          "2205.10250",
+          "2208.02301",
+          "2503.21676",
+          "1808.05054",
+          "1106.6186",
+          "1807.05527",
+          "1809.02869",
+          "2307.00928",
+          "2406.12785",
+          "2412.12881"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 734.3992920359597,
+        "retrieved": [
+          "2205.10250",
+          "1809.02869",
+          "2011.12216",
+          "1807.05527",
+          "2305.17251",
+          "2001.11328",
+          "2105.13809",
+          "1507.02592",
+          "2406.12785",
+          "2312.04174"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A11",
+      "set": "abstract_rare_v1",
+      "question": "Which schema builds on W3C standards to enable interchange and interoperability?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1807.05351"
+      ],
+      "dense": {
+        "latency_ms": 23.250033031217754,
+        "retrieved": [
+          "1807.05351",
+          "2208.02670",
+          "2605.28222",
+          "2109.05629",
+          "2205.06117",
+          "1812.03057",
+          "2601.05264",
+          "2312.16341",
+          "2008.03911",
+          "2407.08086"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 807.6423650491051,
+        "retrieved": [
+          "1807.05351",
+          "2407.08086",
+          "2312.16341",
+          "2311.09329",
+          "2201.12150",
+          "2205.06117",
+          "2601.05264",
+          "2206.03493",
+          "2104.04167",
+          "2409.02332"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A12",
+      "set": "abstract_rare_v1",
+      "question": "How does subitem-level PHQ prediction compare unitask against multitask models?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2501.09687"
+      ],
+      "dense": {
+        "latency_ms": 24.451459990814328,
+        "retrieved": [
+          "2501.09687",
+          "1206.6486",
+          "2512.19184",
+          "1808.07412",
+          "2509.02927",
+          "2205.15752",
+          "2212.09598",
+          "1810.03642",
+          "1505.06279",
+          "2401.15391"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 794.2800619639456,
+        "retrieved": [
+          "2501.09687",
+          "2010.02087",
+          "2307.08386",
+          "1206.6486",
+          "1811.05660",
+          "2511.18225",
+          "1808.07412",
+          "2401.15391",
+          "2205.15752",
+          "2512.19184"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A13",
+      "set": "abstract_rare_v1",
+      "question": "How are analyte measurements and CCG data incorporated into the framework?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1811.10455"
+      ],
+      "dense": {
+        "latency_ms": 20.309669023845345,
+        "retrieved": [
+          "2104.04569",
+          "2011.13350",
+          "1502.02215",
+          "1811.11674",
+          "2010.04742",
+          "2502.04140",
+          "2111.13180",
+          "2301.02033",
+          "2304.04839",
+          "2308.08494"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 776.9797469954938,
+        "retrieved": [
+          "1811.10455",
+          "2511.15743",
+          "1811.11674",
+          "2006.09319",
+          "2201.12150",
+          "1912.03135",
+          "1502.02215",
+          "2308.08494",
+          "2305.17251",
+          "1911.02792"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A14",
+      "set": "abstract_rare_v1",
+      "question": "How is PointNet applied to gesture recognition with asynchronous readout?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2402.01393"
+      ],
+      "dense": {
+        "latency_ms": 20.547405001707375,
+        "retrieved": [
+          "2402.01393",
+          "2208.02048",
+          "2105.02723",
+          "2406.03470",
+          "1901.05639",
+          "2106.06235",
+          "1811.03392",
+          "1905.06549",
+          "2605.26355",
+          "2209.15001"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 882.9859999823384,
+        "retrieved": [
+          "2402.01393",
+          "1512.09327",
+          "2312.02074",
+          "2007.06081",
+          "2401.04491",
+          "2201.09750",
+          "2112.05332",
+          "1905.06549",
+          "2105.02723",
+          "2411.06919"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A15",
+      "set": "abstract_rare_v1",
+      "question": "How is layered linkage structure used to learn representations?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1812.09225"
+      ],
+      "dense": {
+        "latency_ms": 24.020940996706486,
+        "retrieved": [
+          "2103.04046",
+          "2002.12462",
+          "2112.03555",
+          "2107.02363",
+          "2407.07664",
+          "2303.17475",
+          "2201.10859",
+          "1809.10780",
+          "1901.05639",
+          "1905.12588"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 810.9911459614523,
+        "retrieved": [
+          "2607.02166",
+          "1812.09225",
+          "1902.00183",
+          "2108.03762",
+          "1811.03392",
+          "2103.04046",
+          "2510.01658",
+          "1809.10780",
+          "2303.17475",
+          "1905.12588"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A16",
+      "set": "abstract_rare_v1",
+      "question": "Which study evaluates progenitor models and different EOSs in relativistic simulations?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2409.14508"
+      ],
+      "dense": {
+        "latency_ms": 24.311668006703258,
+        "retrieved": [
+          "2409.14508",
+          "2204.00509",
+          "1805.00020",
+          "2306.14070",
+          "2304.05655",
+          "2511.17624",
+          "2602.11092",
+          "2201.12150",
+          "2006.15690",
+          "1712.09208"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 892.979739990551,
+        "retrieved": [
+          "2409.14508",
+          "2503.11120",
+          "2008.10773",
+          "2511.17624",
+          "0906.4258",
+          "2605.11989",
+          "1812.09225",
+          "2206.01088",
+          "2310.11435",
+          "1712.09208"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A17",
+      "set": "abstract_rare_v1",
+      "question": "How are black swan events modelled for internationally traded imports?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2111.07508"
+      ],
+      "dense": {
+        "latency_ms": 21.08027698704973,
+        "retrieved": [
+          "2111.07508",
+          "2606.30999",
+          "2509.05922",
+          "1606.05110",
+          "1801.08640",
+          "2508.20335",
+          "1804.06620",
+          "2011.13350",
+          "2403.07843",
+          "1808.05054"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 741.8894140282646,
+        "retrieved": [
+          "2111.07508",
+          "1902.09154",
+          "1606.05110",
+          "2509.05922",
+          "1801.08640",
+          "1804.06620",
+          "1705.05172",
+          "1811.10154",
+          "2403.07843",
+          "2606.30999"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A18",
+      "set": "abstract_rare_v1",
+      "question": "How do inhomogeneous payoffs and utilities drive wealth accumulation?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1206.6443"
+      ],
+      "dense": {
+        "latency_ms": 22.2564049763605,
+        "retrieved": [
+          "2509.05922",
+          "1206.6443",
+          "2306.05764",
+          "2411.00744",
+          "2606.30999",
+          "1812.01735",
+          "2404.08592",
+          "2011.06158",
+          "1206.6451",
+          "2106.07329"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 777.5563409668393,
+        "retrieved": [
+          "1206.6443",
+          "2411.00744",
+          "2306.05764",
+          "1206.6451",
+          "2606.30999",
+          "2509.05922",
+          "2510.16897",
+          "1901.02046",
+          "2301.05508",
+          "1812.01735"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A19",
+      "set": "abstract_rare_v1",
+      "question": "How do tort liability and civil liberties intersect with adversarial attacks?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1810.10731"
+      ],
+      "dense": {
+        "latency_ms": 26.183228008449078,
+        "retrieved": [
+          "1810.10731",
+          "2006.16179",
+          "1810.07339",
+          "2503.08636",
+          "1908.08649",
+          "2106.06235",
+          "1911.11746",
+          "1811.01134",
+          "2412.18507",
+          "2411.09776"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 774.3592729675584,
+        "retrieved": [
+          "1810.10731",
+          "2004.05005",
+          "2006.16179",
+          "2106.06235",
+          "1908.08649",
+          "1911.11746",
+          "2503.08636",
+          "1810.07339",
+          "1712.04248",
+          "1811.04422"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A20",
+      "set": "abstract_rare_v1",
+      "question": "How is quicksort used to illustrate hybridizing programming with learned components?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1810.00619"
+      ],
+      "dense": {
+        "latency_ms": 22.78238598955795,
+        "retrieved": [
+          "1810.00619",
+          "2506.20629",
+          "1812.03472",
+          "2205.10250",
+          "1808.07412",
+          "1801.09373",
+          "1809.02869",
+          "1912.03905",
+          "2208.02301",
+          "1806.11202"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 769.2552899825387,
+        "retrieved": [
+          "1810.00619",
+          "2605.26355",
+          "2205.10250",
+          "1911.08856",
+          "2211.14617",
+          "1903.04797",
+          "1412.3919",
+          "1801.09373",
+          "2307.00928",
+          "2106.00660"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A21",
+      "set": "abstract_rare_v1",
+      "question": "How are homeostasis and appraisal theories applied to HRI agents?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1705.05172"
+      ],
+      "dense": {
+        "latency_ms": 24.689904996193945,
+        "retrieved": [
+          "1705.05172",
+          "1911.05121",
+          "1812.01074",
+          "2202.01602",
+          "1812.00546",
+          "2211.15476",
+          "2512.22190",
+          "1806.07552",
+          "2011.01925",
+          "2201.12150"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 868.32950997632,
+        "retrieved": [
+          "1705.05172",
+          "2212.01415",
+          "1806.07552",
+          "2006.16679",
+          "2404.03054",
+          "2107.12808",
+          "2512.22190",
+          "1207.6083",
+          "2201.12150",
+          "1703.07915"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A22",
+      "set": "abstract_rare_v1",
+      "question": "How are conserved quantities and invariants used to interpret molecule models?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2304.02381"
+      ],
+      "dense": {
+        "latency_ms": 23.763377976138145,
+        "retrieved": [
+          "2304.02381",
+          "1703.07915",
+          "2510.16897",
+          "2301.13724",
+          "2012.09712",
+          "2312.09490",
+          "1704.06439",
+          "1703.00564",
+          "1911.02792",
+          "1803.04479"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 777.7743199840188,
+        "retrieved": [
+          "2304.02381",
+          "1704.06439",
+          "2012.09712",
+          "1607.00279",
+          "2204.07005",
+          "2010.02087",
+          "2510.16897",
+          "1606.05685",
+          "2508.10836",
+          "1703.00564"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A23",
+      "set": "abstract_rare_v1",
+      "question": "What is AlphaD3M?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1905.10345"
+      ],
+      "dense": {
+        "latency_ms": 18.138743995223194,
+        "retrieved": [
+          "1905.10345",
+          "1811.00542",
+          "2111.03788",
+          "1803.08118",
+          "2407.08250",
+          "2401.15391",
+          "2502.20089",
+          "1105.1033",
+          "1201.0490",
+          "2506.06962"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1204.1949789854698,
+        "retrieved": [
+          "1905.10345",
+          "2111.03788",
+          "2107.02613",
+          "1812.01025",
+          "1811.00542",
+          "1803.08118",
+          "1201.0490",
+          "1105.1033",
+          "2107.12808",
+          "2504.02221"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A24",
+      "set": "abstract_rare_v1",
+      "question": "What is ALFA and how is it used by an analyst for compliance?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2108.07380"
+      ],
+      "dense": {
+        "latency_ms": 26.680606009904295,
+        "retrieved": [
+          "2011.01925",
+          "2108.07380",
+          "2109.05629",
+          "2601.05264",
+          "2202.01602",
+          "1909.09223",
+          "2510.22344",
+          "2106.05799",
+          "2502.16344",
+          "2312.16341"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 847.9266619542614,
+        "retrieved": [
+          "2108.07380",
+          "2502.16344",
+          "2106.00660",
+          "1806.07552",
+          "2510.22344",
+          "2601.05264",
+          "1807.00154",
+          "2109.05629",
+          "1810.00619",
+          "1811.12560"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A25",
+      "set": "abstract_rare_v1",
+      "question": "Which discovery engine provides tooling for reservoir computing reproductions?",
+      "max_idf": 8.016,
+      "relevant": [
+        "2602.11092"
+      ],
+      "dense": {
+        "latency_ms": 27.849098027218133,
+        "retrieved": [
+          "1501.02592",
+          "1901.03678",
+          "2007.01977",
+          "2602.11092",
+          "2010.02087",
+          "1705.07538",
+          "2005.09787",
+          "1808.03753",
+          "2408.09840",
+          "2012.14406"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 798.3321790234186,
+        "retrieved": [
+          "2602.11092",
+          "1501.02592",
+          "1808.03753",
+          "2408.17016",
+          "2506.01177",
+          "1901.03678",
+          "2012.14406",
+          "2408.10265",
+          "2007.01977",
+          "2204.04017"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A26",
+      "set": "abstract_rare_v1",
+      "question": "How are log determinant estimates computed from spectral moments?",
+      "max_idf": 7.505,
+      "relevant": [
+        "1906.01101"
+      ],
+      "dense": {
+        "latency_ms": 24.923871969804168,
+        "retrieved": [
+          "1906.01101",
+          "2601.11626",
+          "1810.10777",
+          "2303.02060",
+          "1805.00020",
+          "2406.08748",
+          "2002.02561",
+          "1207.6083",
+          "2211.01296",
+          "1711.10781"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 1272.695299005136,
+        "retrieved": [
+          "1906.01101",
+          "2303.02060",
+          "1810.10777",
+          "1512.09327",
+          "2002.02561",
+          "1805.00020",
+          "2601.11626",
+          "1207.6083",
+          "2311.07511",
+          "2604.05057"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A27",
+      "set": "abstract_rare_v1",
+      "question": "Which work references the Tangri equation when quantifying bias?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1911.07679"
+      ],
+      "dense": {
+        "latency_ms": 26.64524596184492,
+        "retrieved": [
+          "2103.03923",
+          "2406.02584",
+          "1906.10652",
+          "1909.01866",
+          "1904.05268",
+          "2112.13398",
+          "2405.18095",
+          "2005.09052",
+          "0906.4258",
+          "2307.12158"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "hybrid": {
+        "latency_ms": 934.2605049605481,
+        "retrieved": [
+          "2405.18095",
+          "2405.08498",
+          "2112.13398",
+          "1909.01866",
+          "2311.00235",
+          "2005.09052",
+          "2205.13462",
+          "2208.04221",
+          "2302.12538",
+          "1910.09700"
+        ],
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      }
+    },
+    {
+      "id": "A28",
+      "set": "abstract_rare_v1",
+      "question": "Which method primes learning rates to eliminate a shortcoming of MAML on Omniglot?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1905.07435"
+      ],
+      "dense": {
+        "latency_ms": 20.576433977112174,
+        "retrieved": [
+          "1905.07435",
+          "2310.06148",
+          "1206.6485",
+          "1507.02592",
+          "2506.14110",
+          "1810.03642",
+          "2410.20625",
+          "1905.12588",
+          "2212.07295",
+          "2406.04344"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 761.1021450138651,
+        "retrieved": [
+          "1905.07435",
+          "1810.03642",
+          "2310.06148",
+          "1905.12588",
+          "1811.03179",
+          "2006.11184",
+          "1305.2505",
+          "1206.6485",
+          "1507.02592",
+          "2506.14110"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A29",
+      "set": "abstract_rare_v1",
+      "question": "How does a categorised view of learning curves aid suitability decisions?",
+      "max_idf": 6.716,
+      "relevant": [
+        "2201.12150"
+      ],
+      "dense": {
+        "latency_ms": 23.047833004966378,
+        "retrieved": [
+          "2201.12150",
+          "2203.12094",
+          "2001.07455",
+          "2506.14110",
+          "2106.07214",
+          "1206.3713",
+          "2006.03361",
+          "2509.20008",
+          "2109.09307",
+          "2211.14401"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 675.6828269571997,
+        "retrieved": [
+          "2201.12150",
+          "2006.03361",
+          "1901.08558",
+          "2002.10904",
+          "2001.07455",
+          "2002.08596",
+          "2207.00391",
+          "2203.12094",
+          "2109.09307",
+          "2406.17098"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    },
+    {
+      "id": "A30",
+      "set": "abstract_rare_v1",
+      "question": "Which survey gives an expansive reformulation of predominant on-device algorithms?",
+      "max_idf": 8.016,
+      "relevant": [
+        "1911.00623"
+      ],
+      "dense": {
+        "latency_ms": 24.369572987779975,
+        "retrieved": [
+          "1911.00623",
+          "1409.2620",
+          "2007.14390",
+          "2311.18356",
+          "2208.05844",
+          "2412.04426",
+          "1811.11479",
+          "2604.05057",
+          "2206.14987",
+          "2012.00419"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "hybrid": {
+        "latency_ms": 768.6215509893373,
+        "retrieved": [
+          "1911.00623",
+          "1811.11479",
+          "2311.18356",
+          "2007.14390",
+          "2108.01867",
+          "2504.07322",
+          "1705.05172",
+          "1409.2620",
+          "2204.07005",
+          "2408.09840"
+        ],
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      }
+    }
+  ]
+}

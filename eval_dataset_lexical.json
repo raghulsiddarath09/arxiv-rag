@@ -1,0 +1,418 @@
+{
+  "_meta": {
+    "name": "lexical_entity_v1",
+    "corpus": "papers_cache.json (1100 papers)",
+    "purpose": "Complementary eval set to eval_dataset.json. Where the original set paraphrases titles into natural-language questions (favouring bi-encoder semantic matching), this set targets EXACT lexical signals: named systems, acronyms, compound multi-topic constraints, and numeric identifiers. IR literature holds that sparse retrieval (BM25) outperforms dense on rare-token and entity queries, because embeddings smooth over infrequent tokens while term matching does not.",
+    "hypothesis": "hybrid (FAISS + BM25) > dense-only on this set, reversing the ordering observed on eval_dataset.json.",
+    "honest_caveat": "This set was deliberately constructed in a style expected to favour lexical retrieval. It is NOT a neutral benchmark and must be reported alongside eval_dataset.json, never in place of it. The pair together characterise where each strategy wins; either alone is misleading.",
+    "id_format": "Bare arXiv ID, no URL prefix, no version suffix. evaluate.py normalizes both sides.",
+    "question_styles": [
+      "named_system: query contains the paper's distinctive system/method name",
+      "compound: query constrains on two topics that must both be satisfied",
+      "numeric: query contains a number, version, or size that appears in the title",
+      "rare_token: query hinges on one low-frequency technical term"
+    ]
+  },
+  "questions": [
+    {
+      "id": "L01",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is LoRA-FAIR and how does it handle aggregation and initialization refinement?",
+      "relevant_paper_ids": ["2411.14961"],
+      "relevant_titles": ["LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement"]
+    },
+    {
+      "id": "L02",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What does LoRA+ change about low rank adaptation of large models?",
+      "relevant_paper_ids": ["2402.12354"],
+      "relevant_titles": ["LoRA+: Efficient Low Rank Adaptation of Large Models"]
+    },
+    {
+      "id": "L03",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is CARE-LoRA and what does compressed activation reconstruction do?",
+      "relevant_paper_ids": ["2607.11940"],
+      "relevant_titles": ["CARE-LoRA: Compressed Activation REconstruction for Memory-Efficient LoRA"]
+    },
+    {
+      "id": "L04",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is Null-LoRA and how does null space adaptation work?",
+      "relevant_paper_ids": ["2512.15233"],
+      "relevant_titles": ["Null-LoRA: Low-Rank Adaptation on Null Space"]
+    },
+    {
+      "id": "L05",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is LoRA-Pro and are low-rank adapters properly optimized?",
+      "relevant_paper_ids": ["2407.18242"],
+      "relevant_titles": ["LoRA-Pro: Are Low-Rank Adapters Properly Optimized?"]
+    },
+    {
+      "id": "L06",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is SAD-LoRA and how does spectral alignment apply to knowledge distillation?",
+      "relevant_paper_ids": ["2607.04306"],
+      "relevant_titles": ["SAD-LoRA: Spectral Alignment for Low-Rank Knowledge Distillation"]
+    },
+    {
+      "id": "L07",
+      "style": "named_system",
+      "topic": "lora_peft",
+      "question": "What is TC-LoRA and how is conditional LoRA temporally modulated?",
+      "relevant_paper_ids": ["2510.09561"],
+      "relevant_titles": ["TC-LoRA: Temporally Modulated Conditional LoRA for Adaptive Diffusion"]
+    },
+    {
+      "id": "L08",
+      "style": "compound",
+      "topic": "lora_peft",
+      "question": "Compress then Merge: combining multiple LoRAs into one low-rank adapter",
+      "relevant_paper_ids": ["2606.03723"],
+      "relevant_titles": ["Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter"]
+    },
+    {
+      "id": "L09",
+      "style": "rare_token",
+      "topic": "lora_peft",
+      "question": "What are the computational limits of LoRA fine-tuning?",
+      "relevant_paper_ids": ["2406.03136"],
+      "relevant_titles": ["Computational Limits of Low-Rank Adaptation (LoRA) Fine-Tuning"]
+    },
+    {
+      "id": "L10",
+      "style": "named_system",
+      "topic": "federated_learning",
+      "question": "What is FedOne and how is it query-efficient for black-box discrete prompt learning?",
+      "relevant_paper_ids": ["2506.14929"],
+      "relevant_titles": ["FedOne: Query-Efficient Federated Learning for Black-box Discrete Prompt Learning"]
+    },
+    {
+      "id": "L11",
+      "style": "named_system",
+      "topic": "federated_learning",
+      "question": "What is FeDXL and how does it provide provable deep X-risk optimization?",
+      "relevant_paper_ids": ["2210.14396"],
+      "relevant_titles": ["FeDXL: Provable Federated Learning for Deep X-Risk Optimization"]
+    },
+    {
+      "id": "L12",
+      "style": "named_system",
+      "topic": "federated_learning",
+      "question": "What is SSFL and how does it discover sparse unified subnetworks at initialization?",
+      "relevant_paper_ids": ["2405.09037"],
+      "relevant_titles": ["SSFL: Discovering Sparse Unified Subnetworks at Initialization for Efficient Federated Learning"]
+    },
+    {
+      "id": "L13",
+      "style": "named_system",
+      "topic": "federated_learning",
+      "question": "What is FADL and how does federated-autonomous deep learning apply to electronic health records?",
+      "relevant_paper_ids": ["1811.11400"],
+      "relevant_titles": ["FADL: Federated-Autonomous Deep Learning for Distributed Electronic Health Records"]
+    },
+    {
+      "id": "L14",
+      "style": "rare_token",
+      "topic": "federated_learning",
+      "question": "What is superquantile aggregation in federated learning?",
+      "relevant_paper_ids": ["2112.09429"],
+      "relevant_titles": ["Federated Learning with Superquantile Aggregation for Heterogeneous Data"]
+    },
+    {
+      "id": "L15",
+      "style": "compound",
+      "topic": "federated_learning",
+      "question": "label-flipping attacks against federated learning models",
+      "relevant_paper_ids": ["2412.18507"],
+      "relevant_titles": ["An Empirical Analysis of Federated Learning Models Subject to Label-Flipping Attacks"]
+    },
+    {
+      "id": "L16",
+      "style": "compound",
+      "topic": "federated_learning",
+      "question": "client sampling for individualized privacy in federated learning",
+      "relevant_paper_ids": ["2501.17634"],
+      "relevant_titles": ["Federated Learning With Individualized Privacy Through Client Sampling"]
+    },
+    {
+      "id": "L17",
+      "style": "compound",
+      "topic": "federated_learning",
+      "question": "split federated self-supervised learning",
+      "relevant_paper_ids": ["2406.08267"],
+      "relevant_titles": ["A deep cut into Split Federated Self-supervised Learning"]
+    },
+    {
+      "id": "L18",
+      "style": "compound",
+      "topic": "federated_learning",
+      "question": "federated distillation for communication-efficient on-device machine learning",
+      "relevant_paper_ids": ["1811.11479"],
+      "relevant_titles": ["Communication-Efficient On-Device Machine Learning: Federated Distillation"]
+    },
+    {
+      "id": "L19",
+      "style": "compound",
+      "topic": "federated_learning",
+      "question": "gaming and cooperation incentives in federated learning",
+      "relevant_paper_ids": ["2509.02391"],
+      "relevant_titles": ["Gaming and Cooperation in Federated Learning: What Can Happen and How to Monitor It"]
+    },
+    {
+      "id": "L20",
+      "style": "named_system",
+      "topic": "meta_learning",
+      "question": "What is Alpha MAML and how does it adapt model-agnostic meta-learning?",
+      "relevant_paper_ids": ["1905.07435"],
+      "relevant_titles": ["Alpha MAML: Adaptive Model-Agnostic Meta-Learning"]
+    },
+    {
+      "id": "L21",
+      "style": "named_system",
+      "topic": "meta_learning",
+      "question": "What is PACOH and what PAC-guarantees does it give for meta-learning?",
+      "relevant_paper_ids": ["2002.05551"],
+      "relevant_titles": ["PACOH: Bayes-Optimal Meta-Learning with PAC-Guarantees"]
+    },
+    {
+      "id": "L22",
+      "style": "named_system",
+      "topic": "meta_learning",
+      "question": "What is Metalic and how does it do meta-learning in-context with protein language models?",
+      "relevant_paper_ids": ["2410.08355"],
+      "relevant_titles": ["Metalic: Meta-Learning In-Context with Protein Language Models"]
+    },
+    {
+      "id": "L23",
+      "style": "numeric",
+      "topic": "meta_learning",
+      "question": "What is Auto-Sklearn 2.0 and how does it use meta-learning for hands-free AutoML?",
+      "relevant_paper_ids": ["2007.04074"],
+      "relevant_titles": ["Auto-Sklearn 2.0: Hands-free AutoML via Meta-Learning"]
+    },
+    {
+      "id": "L24",
+      "style": "rare_token",
+      "topic": "meta_learning",
+      "question": "hyper-state space exploration for meta reinforcement learning",
+      "relevant_paper_ids": ["2010.01062"],
+      "relevant_titles": ["Exploration in Approximate Hyper-State Space for Meta Reinforcement Learning"]
+    },
+    {
+      "id": "L25",
+      "style": "rare_token",
+      "topic": "meta_learning",
+      "question": "Bayes meets Bernstein: fast rates at the meta level",
+      "relevant_paper_ids": ["2302.11709"],
+      "relevant_titles": ["Bayes meets Bernstein at the Meta Level: an Analysis of Fast Rates in Meta-Learning"]
+    },
+    {
+      "id": "L26",
+      "style": "compound",
+      "topic": "meta_learning",
+      "question": "regression networks for few-shot classification meta-learning",
+      "relevant_paper_ids": ["1905.13613"],
+      "relevant_titles": ["Regression Networks for Meta-Learning Few-Shot Classification"]
+    },
+    {
+      "id": "L27",
+      "style": "named_system",
+      "topic": "rag",
+      "question": "What is FAIR-RAG and how does faithful adaptive iterative refinement work?",
+      "relevant_paper_ids": ["2510.22344"],
+      "relevant_titles": ["FAIR-RAG: Faithful Adaptive Iterative Refinement for Retrieval-Augmented Generation"]
+    },
+    {
+      "id": "L28",
+      "style": "named_system",
+      "topic": "rag",
+      "question": "What is MultiHop-RAG and what does it benchmark?",
+      "relevant_paper_ids": ["2401.15391"],
+      "relevant_titles": ["MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries"]
+    },
+    {
+      "id": "L29",
+      "style": "compound",
+      "topic": "rag",
+      "question": "stealthy membership inference attacks against retrieval-augmented generation",
+      "relevant_paper_ids": ["2502.00306"],
+      "relevant_titles": ["Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation"]
+    },
+    {
+      "id": "L30",
+      "style": "compound",
+      "topic": "rag",
+      "question": "engineering the RAG stack architecture review",
+      "relevant_paper_ids": ["2601.05264"],
+      "relevant_titles": ["Engineering the RAG Stack: A Comprehensive Review of the Architecture"]
+    },
+    {
+      "id": "L31",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "entailment tuning for dense passage retrieval",
+      "relevant_paper_ids": ["2410.15801"],
+      "relevant_titles": ["Improve Dense Passage Retrieval with Entailment Tuning"]
+    },
+    {
+      "id": "L32",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "dual encoder robustness against misspellings in dense retrieval",
+      "relevant_paper_ids": ["2205.02303"],
+      "relevant_titles": ["Analysing the Robustness of Dual Encoders for Dense Retrieval Against Misspellings"]
+    },
+    {
+      "id": "L33",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "multi-positive contrastive learning for dense retriever typo robustness",
+      "relevant_paper_ids": ["2403.10939"],
+      "relevant_titles": ["Improving the Robustness of Dense Retrievers Against Typos via Multi-Positive Contrastive Learning"]
+    },
+    {
+      "id": "L34",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "zero-shot question generation for passage retrieval",
+      "relevant_paper_ids": ["2204.07496"],
+      "relevant_titles": ["Improving Passage Retrieval with Zero-Shot Question Generation"]
+    },
+    {
+      "id": "L35",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "cohort retrieval using dense passage retrieval",
+      "relevant_paper_ids": ["2507.01049"],
+      "relevant_titles": ["Cohort Retrieval using Dense Passage Retrieval"]
+    },
+    {
+      "id": "L36",
+      "style": "compound",
+      "topic": "dense_retrieval",
+      "question": "multi-query rewriting for conversational search",
+      "relevant_paper_ids": ["2406.18960"],
+      "relevant_titles": ["A Surprisingly Simple yet Effective Multi-Query Rewriting Method for Conversational Search"]
+    },
+    {
+      "id": "L37",
+      "style": "named_system",
+      "topic": "contrastive_embeddings",
+      "question": "What is Centroids Matching for continual learning?",
+      "relevant_paper_ids": ["2208.02048"],
+      "relevant_titles": ["Centroids Matching: an efficient Continual Learning approach"]
+    },
+    {
+      "id": "L38",
+      "style": "rare_token",
+      "topic": "contrastive_embeddings",
+      "question": "hyperbolic entailment cones for hierarchical embeddings",
+      "relevant_paper_ids": ["1804.01882"],
+      "relevant_titles": ["Hyperbolic Entailment Cones for Learning Hierarchical Embeddings"]
+    },
+    {
+      "id": "L39",
+      "style": "rare_token",
+      "topic": "contrastive_embeddings",
+      "question": "alignment and uniformity on the hypersphere in contrastive representation learning",
+      "relevant_paper_ids": ["2005.10242"],
+      "relevant_titles": ["Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere"]
+    },
+    {
+      "id": "L40",
+      "style": "rare_token",
+      "topic": "contrastive_embeddings",
+      "question": "tree edit distance learning via adaptive symbol embeddings",
+      "relevant_paper_ids": ["1806.05009"],
+      "relevant_titles": ["Tree Edit Distance Learning via Adaptive Symbol Embeddings"]
+    },
+    {
+      "id": "L41",
+      "style": "rare_token",
+      "topic": "contrastive_embeddings",
+      "question": "graph embeddings via coarsening",
+      "relevant_paper_ids": ["2007.02817"],
+      "relevant_titles": ["Faster Graph Embeddings via Coarsening"]
+    },
+    {
+      "id": "L42",
+      "style": "numeric",
+      "topic": "quantization",
+      "question": "8-bit quantization of transformer neural machine translation",
+      "relevant_paper_ids": ["1906.00532"],
+      "relevant_titles": ["Efficient 8-Bit Quantization of Transformer Neural Machine Language Translation"]
+    },
+    {
+      "id": "L43",
+      "style": "named_system",
+      "topic": "distillation",
+      "question": "What is TinyBERT and how does it distill BERT?",
+      "relevant_paper_ids": ["1909.10351"],
+      "relevant_titles": ["TinyBERT: Distilling BERT for Natural Language Understanding"]
+    },
+    {
+      "id": "L44",
+      "style": "named_system",
+      "topic": "rl",
+      "question": "What is ChainerRL?",
+      "relevant_paper_ids": ["1912.03905"],
+      "relevant_titles": ["ChainerRL: A Deep Reinforcement Learning Library"]
+    },
+    {
+      "id": "L45",
+      "style": "named_system",
+      "topic": "vision",
+      "question": "What is HiCu and how does it use hierarchy for curriculum learning in ICD coding?",
+      "relevant_paper_ids": ["2208.02301"],
+      "relevant_titles": ["HiCu: Leveraging Hierarchy for Curriculum Learning in Automated ICD Coding"]
+    },
+    {
+      "id": "L46",
+      "style": "named_system",
+      "topic": "vision",
+      "question": "What is GNN-encoder and how does it learn a dual-encoder architecture?",
+      "relevant_paper_ids": ["2204.08241"],
+      "relevant_titles": ["GNN-encoder: Learning a Dual-encoder Architecture via Graph Neural Networks"]
+    },
+    {
+      "id": "L47",
+      "style": "rare_token",
+      "topic": "vision",
+      "question": "dilated neighborhood attention transformer",
+      "relevant_paper_ids": ["2209.15001"],
+      "relevant_titles": ["Dilated Neighborhood Attention Transformer"]
+    },
+    {
+      "id": "L48",
+      "style": "rare_token",
+      "topic": "vision",
+      "question": "quadrangle attention in vision transformers",
+      "relevant_paper_ids": ["2303.15105"],
+      "relevant_titles": ["Vision Transformer with Quadrangle Attention"]
+    },
+    {
+      "id": "L49",
+      "style": "compound",
+      "topic": "vision",
+      "question": "token merging and pruning with learned thresholds for vision transformers",
+      "relevant_paper_ids": ["2307.10780"],
+      "relevant_titles": ["Learned Thresholds Token Merging and Pruning for Vision Transformers"]
+    },
+    {
+      "id": "L50",
+      "style": "compound",
+      "topic": "vision",
+      "question": "mask-attention-free transformer for 3D instance segmentation",
+      "relevant_paper_ids": ["2309.01692"],
+      "relevant_titles": ["Mask-Attention-Free Transformer for 3D Instance Segmentation"]
+    }
+  ]
+}

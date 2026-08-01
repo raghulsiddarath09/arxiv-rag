@@ -241,7 +241,66 @@ contextualize_chain = contextualize_prompt | query_llm | StrOutputParser()
 # NEW — stores most recently retrieved docs so main.py
 # can extract sources after each pipeline call
 # ============================================================
+# ============================================================
+# Query router — chooses retrieval strategy per query
+# ============================================================
+# Neither strategy dominates (72 verified eval questions):
+#   paraphrase queries  dense 82.1%  >  hybrid 73.8%   R@3
+#   rare-term queries   dense 76.7%  <  hybrid 93.3%   R@3
+#
+# Signal: max IDF over query tokens. A query containing a
+# low-frequency term ("alphad3m", "node2vec") is one where exact
+# term matching beats embedding similarity, because bi-encoders
+# compress a whole chunk into one vector and smooth rare tokens
+# away. Common-vocabulary queries are better served semantically.
+#
+# Threshold sweep over the combined set:
+#   T=0   (all hybrid)  81.9% R@3  @ 834ms
+#   T=6.0               86.1% R@3  @ 709ms   83% hybrid
+#   T=8.0               85.4% R@3  @ 381ms   43% hybrid   <- shipped
+#   T=100 (all dense)   79.9% R@3  @  34ms
+#
+# CAVEAT: T selected by sweep on the full eval set, not a held-out
+# split. 85.4% is therefore an optimistic estimate.
+#
+# Classification cost: tokenize + dict lookups, sub-millisecond.
+ROUTER_THRESHOLD = 8.0
+ROUTER_K = 5
+
+
+def query_max_idf(question):
+    """Highest IDF among query tokens present in the BM25 vocabulary."""
+    toks = tokenize(question)
+    vals = [bm25.idf[t] for t in toks if t in bm25.idf]
+    return max(vals) if vals else 0.0
+
+
+def routed_retriever(question, k_final=ROUTER_K):
+    """Route to hybrid for rare-term queries, dense otherwise."""
+    score = query_max_idf(question)
+
+    if score >= ROUTER_THRESHOLD:
+        docs = hybrid_search(question, k_semantic=15, k_bm25=15, k_final=k_final)
+        for d in docs:
+            d.metadata["retrieval_route"] = "hybrid"
+        if docs:
+            return docs
+        # Rare-term query with nothing above the relevance threshold:
+        # fall through to dense rather than returning an empty context.
+
+    scored = vectorstore.similarity_search_with_score(question, k=k_final)
+    docs = []
+    for doc, distance in scored:
+        # FAISS returns L2 distance (lower is closer). The UI expects a
+        # relevance-style score, so map to (0,1] with 1 = exact match.
+        doc.metadata["rerank_score"] = float(1.0 / (1.0 + distance))
+        doc.metadata["retrieval_route"] = "dense"
+        docs.append(doc)
+    return docs
+
+
 last_retrieved_docs = []
+
 
 def full_retriever(input_dict):
     global last_retrieved_docs
@@ -249,8 +308,8 @@ def full_retriever(input_dict):
         question = contextualize_chain.invoke(input_dict)
     else:
         question = input_dict["input"]
-    docs = full_hybrid_retriever(question)
-    last_retrieved_docs = docs  # ← main.py reads this after invoke()
+    docs = routed_retriever(question)
+    last_retrieved_docs = docs  # main.py reads this after invoke()
     return docs
 
 rag_chain = (
