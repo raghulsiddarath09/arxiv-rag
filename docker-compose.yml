@@ -8,10 +8,9 @@ services:
     # Use official Redis image — no custom Dockerfile needed
     # redis:7-alpine = Redis 7 on Alpine Linux (~30MB)
     container_name: arxiv-redis
-    ports:
-      - "6379:6379"
-      # host_port:container_port
-      # Exposes Redis on your Mac's port 6379
+    # No host port mapping: the backend reaches Redis at hostname "redis"
+    # over Docker's internal network. Publishing 6379 exposed an
+    # unauthenticated Redis to the public internet.
     volumes:
       - redis_data:/data
       # Persist Redis data across container restarts
