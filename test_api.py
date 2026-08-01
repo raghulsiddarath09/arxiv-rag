@@ -16,8 +16,8 @@ from unittest.mock import MagicMock
 mock_pipeline = MagicMock()
 mock_pipeline.chain_with_history = MagicMock()
 mock_pipeline.vectorstore = MagicMock()
-mock_pipeline.vectorstore.index.ntotal = 4119
-mock_pipeline.papers = [{"title": f"Paper {i}", "id": f"arxiv:{i}", "authors": "Author", "published": "2023"} for i in range(1000)]
+mock_pipeline.vectorstore.index.ntotal = 4544
+mock_pipeline.papers = [{"title": f"Paper {i}", "id": f"arxiv:{i}", "authors": "Author", "published": "2023"} for i in range(1100)]
 mock_pipeline.store = {}
 mock_pipeline.last_retrieved_docs = []
 
@@ -60,18 +60,18 @@ def test_health_endpoint():
     assert "vectors" in data
     assert "papers" in data
     assert "redis" in data
-    assert data["vectors"] == 4119
-    assert data["papers"] == 1000
+    assert data["vectors"] == 4544
+    assert data["papers"] == 1100
     print(f"\n✅ /health: {data}")
 
 
 def test_papers_endpoint():
-    """GET /papers should return all 1000 papers"""
+    """GET /papers should return all 1100 papers"""
     response = client.get("/papers")
     assert response.status_code == 200
     data = response.json()
-    assert data["count"] == 1000
-    assert len(data["papers"]) == 1000
+    assert data["count"] == 1100
+    assert len(data["papers"]) == 1100
     assert "title" in data["papers"][0]
     assert "id" in data["papers"][0]
     print(f"\n✅ /papers: {data['count']} papers returned")
