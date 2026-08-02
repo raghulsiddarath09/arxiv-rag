@@ -205,6 +205,12 @@ are committed as `eval_results_*.json`.
 
 33 tests, `main.py` at 83% statement coverage.
 
+`rag_pipeline.py` is not included in the coverage figure: `test_api.py`
+installs a mock at `sys.modules['rag_pipeline']` so the suite runs in ~1s
+instead of ~45s. Its routing logic is covered separately by
+`test_router.py` against a stubbed IDF table, plus one integration test
+that exercises the live BM25 vocabulary when the index is available.
+
 ```bash
 pytest test_api.py test_router.py --cov=main
 ```
