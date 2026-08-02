@@ -43,7 +43,7 @@ jobs:
           REDIS_HOST: localhost
           REDIS_PORT: 6379
           GROQ_API_KEY: dummy-key-for-tests
-        run: pytest test_api.py -v
+        run: pytest test_api.py test_router.py -v
 
   # ── Stage 2: Deploy to EC2 (only if tests pass) ───────────
   deploy:

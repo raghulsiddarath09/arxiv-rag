@@ -10,3 +10,5 @@ faiss_index/
 frontend/build/
 frontend/node_modules/
 papers_cache.json
+*.bak
+*.pre-router
